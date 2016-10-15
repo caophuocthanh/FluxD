@@ -10,35 +10,38 @@ import UIKit
 
 class BViewController: UIViewController {
 
-    var lableB = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("\n\n----------------BViewController viewDidLoad-------------------\n")
         
         self.view.backgroundColor = UIColor.blueColor()
         
-
-        self.lableB.text = "B THANH"
-        
         // Do any additional setup after loading the view.
         
-        let v =  Store.defaultStore
-        let z = v.fetch("1")
-        let zc = z[0]
+        let ware =  Store.defaultStore
+        let a = ware.fetch("1")
         
-        self.lableB.text = zc.model.id.value
-        print(zc.model.id.reacts)
-        print(zc.model.id)
+        print("ware.fetch:", a)
         
+        let ac = a[0]
         
-        let nc = React<String> {
-            print("react B: ",$0)
-            self.lableB.text = $0
+        print("before ac.model.id.reacts:", ac.model.id.reacts)
+        print(ac.model.self)
+        
+        let mc = React<String> {
+            print("=======>>>>> react B: ",$0)
         }
-        nc.bind(zc.model.id)
+        mc.bind(ac.model.id)
+        
+        print("ac.id.value:", ac.model.id.value)
+        print("ac.model.id.reacts:", ac.model.id.reacts)
+        
+        print("-------SET VALUE")
+        
+        ac.model.id.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
 
     }
-
-    
     
     @IBOutlet weak var button: UIButton!
 
@@ -49,6 +52,10 @@ class BViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         print("viewDidDisappear B")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("viewDidAppear B")
     }
 
 }

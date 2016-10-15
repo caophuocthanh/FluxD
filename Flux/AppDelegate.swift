@@ -14,8 +14,7 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let window	= UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -25,7 +24,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
+        setup()
+        
         return true
+    }
+    
+    func setup() {
+        
+        print("\n\n----------------AppDelegate setup-------------------\n")
+        
+        let warehouse =  Store.defaultStore
+        
+        let a1 = NewModel(id: "a1", create_at: nil, name: "a1")
+        let a2 = NewModel(id: "a2", create_at: nil, name: "a2")
+        let a3 = NewModel(id: "a3", create_at: nil, name: "a3")
+        let a4 = NewModel(id: "a4", create_at: nil, name: "a4")
+        
+        warehouse.append(a1, storeIndentifier: "1")
+        warehouse.append(a2, storeIndentifier: "1")
+        warehouse.append(a3, storeIndentifier: "1")
+        warehouse.append(a4, storeIndentifier: "1")
+        
+        print("warehouse.getStore(): ", warehouse.getStore())
     }
 
     func applicationWillResignActive(application: UIApplication) {

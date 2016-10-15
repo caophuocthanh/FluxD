@@ -10,7 +10,10 @@ import UIKit
 
 /* ReactBox */
 class ReactBox<T> {
-    weak var react: React<T>?
+    // TODO: Help me
+    //weak var react: React<T>?
+    var react: React<T>?
+    
     init(_ react: React<T>) {
         self.react = react
     }
