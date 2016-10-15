@@ -77,6 +77,7 @@ class ViewController: UIViewController {
         print("--------SET VALUE")
         
         ac.model.id.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+
     }
 
     
