@@ -19,6 +19,10 @@ class Store {
         return self.store
     }
     
+    func removeReaction(sender: AnyObject) {
+        print("TODO: Please release reaction of sender: ", sender)
+    }
+    
     func append(model: Model!, storeIndentifier: String) {
         if self.store.count > 0 {
             for value in self.store {

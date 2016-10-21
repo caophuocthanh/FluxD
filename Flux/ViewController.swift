@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
-
+        
         
         print("\n\n-----------------ViewController viewDidLoad-----------------\n")
         
@@ -27,22 +27,21 @@ class ViewController: UIViewController {
         
         print("ware.fetch:", a)
         
-        let ac = a[0]
-        print(ac.model.self)
-        print("before ac.model.id.reacts:", ac.model.id.reacts)
+        let newmodel: NewModel = a[0].model as! NewModel
+        print(newmodel.self)
+        print("before ac.model.id.reacts:", newmodel.name.reacts)
         
-        let mc = React<String> {
-            print("=======>>>>> react A: ",$0)
-        }
-        mc.bind(ac.model.id)
-
-        print("ac.model.id.value:", ac.model.id.value)
-        print("ac.model.id.reacts:", ac.model.id.reacts)
+        React<String> { [weak self] in
+            print(self," =======>>>>> react A: ",$0)
+            }.bind(newmodel.name)
         
-       
+        print("ac.model.id.value:", newmodel.name.value)
+        print("ac.model.id.reacts:", newmodel.name.reacts)
+        
+        
         print("------SET VALUE")
-        ac.model.id.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
-
+        newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+        
         /// /////////////////////////////////////////////////////////////
         
         let delayTime0 = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
@@ -63,23 +62,32 @@ class ViewController: UIViewController {
         
         print("\n\n----------------ViewController viewDidAppear-------------------\n")
         
-        let ware =  Store.defaultStore
-        let a = ware.fetch("1")
+        let delayTime0 = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime0, dispatch_get_main_queue()) {
+            let ware =  Store.defaultStore
+            let a = ware.fetch("1")
+            
+            print("ware.fetch:", a)
+            
+            let newmodel: NewModel = a[0].model as! NewModel
+            print(newmodel.self)
+            
+            print("ac.model.id.value:", newmodel.name.value)
+            print("ac.model.id.reacts:", newmodel.name.reacts)
+            
+            
+            print("------SET VALUE")
+            newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+        }
         
-        print("ware.fetch:", a)
-        
-        let ac = a[0]
-        print(ac.model.self)
-        
-        print("ac.id.value:", ac.model.id.value)
-        print("ac.model.id.reacts:", ac.model.id.reacts)
-        
-        print("--------SET VALUE")
-        
-        ac.model.id.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
-
     }
-
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+    }
+    
+    deinit {
+        print("deinit: ",self )
+    }
 }
 

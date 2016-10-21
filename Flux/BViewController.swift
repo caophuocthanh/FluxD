@@ -10,7 +10,8 @@ import UIKit
 
 class BViewController: UIViewController {
 
-
+    private var newmodel: NewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\n\n----------------BViewController viewDidLoad-------------------\n")
@@ -24,26 +25,23 @@ class BViewController: UIViewController {
         
         print("ware.fetch:", a)
         
-        let ac = a[0]
+        newmodel = a[0].model as! NewModel
         
-        print("before ac.model.id.reacts:", ac.model.id.reacts)
-        print(ac.model.self)
+        print(newmodel.self)
+        print("before ac.model.id.reacts:", newmodel.name.reacts)
         
-        let mc = React<String> {
-            print("=======>>>>> react B: ",$0)
-        }
-        mc.bind(ac.model.id)
+        React<String> { [weak self] in
+            print(self," =======>>>>> react B: ",$0)
+            }.bind(newmodel.name)
         
-        print("ac.id.value:", ac.model.id.value)
-        print("ac.model.id.reacts:", ac.model.id.reacts)
+        print("ac.model.id.value:", newmodel.name.value)
+        print("ac.model.id.reacts:", newmodel.name.reacts)
         
-        print("-------SET VALUE")
         
-        ac.model.id.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+        print("------SET VALUE")
+        newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
 
     }
-    
-    @IBOutlet weak var button: UIButton!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,11 +49,22 @@ class BViewController: UIViewController {
     }
     
     override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
         print("viewDidDisappear B")
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         print("viewDidAppear B")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        print("viewWillDisappear B")
+    }
+    
+    deinit {
+        print("deinit: ",self )
     }
 
 }
