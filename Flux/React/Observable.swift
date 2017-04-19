@@ -9,32 +9,32 @@
 import Foundation
 
 /* Dynamic */
-class Observable<Element> {
+class Observable<ElementType> {
     
-    typealias EventHandler = (Observable<Element>) -> ()
+    typealias EventHandler = (Observable<ElementType>) -> ()
     
-    var value: Element {
+    var value: ElementType {
         didSet {
             for (index, eventBox) in self.events.enumerated() {
                 guard let event = eventBox.event else {
                     self.events.remove(at: index)
                     return
                 }
-                event.listener(self.value)
+                event.onChange(value)
             }
         }
     }
     
-    var events: [EventBox<Element>] = []
+    var events: [EventBox<ElementType>] = []
     
-    init(_ value: Element) {
+    init(_ value: ElementType) {
         self.value = value
     }
     
     func subscribe(_ event: @escaping EventHandler) {
-        Event<Element> {(value) in
-            event(Observable<Element>(value))
-            }.on(self)
+        Event<ElementType> {(value) in
+            event(Observable<ElementType>(value))
+            }.subscribe(self)
     }
     
 }

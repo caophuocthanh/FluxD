@@ -30,6 +30,7 @@
 		05E4E0A71EA69D1100A57345 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0A61EA69D1100A57345 /* BaseModel.swift */; };
 		05E4E0A91EA69D2D00A57345 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0A81EA69D2D00A57345 /* Service.swift */; };
 		05E4E0AB1EA69D3E00A57345 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0AA1EA69D3E00A57345 /* View.swift */; };
+		05FA6F8D1EA758BF0047BFCF /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FA6F8C1EA758BF0047BFCF /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		05E4E0A61EA69D1100A57345 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		05E4E0A81EA69D2D00A57345 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		05E4E0AA1EA69D3E00A57345 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		05FA6F8C1EA758BF0047BFCF /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				055367761EA73E0F0066A78F /* Generate.swift */,
 				055367781EA741EB0066A78F /* Map.swift */,
 				0553677A1EA747F90066A78F /* Fillter.swift */,
+				05FA6F8C1EA758BF0047BFCF /* Queue.swift */,
 			);
 			path = React;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				0553677B1EA747F90066A78F /* Fillter.swift in Sources */,
 				05E4E08B1EA68D9E00A57345 /* EventBox.swift in Sources */,
 				05E4E0A91EA69D2D00A57345 /* Service.swift in Sources */,
+				05FA6F8D1EA758BF0047BFCF /* Queue.swift in Sources */,
 				05E4E0AB1EA69D3E00A57345 /* View.swift in Sources */,
 				05E4E09B1EA68F1700A57345 /* BViewController.swift in Sources */,
 				05E4E0A31EA69CDE00A57345 /* Templates.swift in Sources */,

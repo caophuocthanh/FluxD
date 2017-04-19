@@ -9,18 +9,22 @@
 import UIKit
 
 /* React */
-class Event<Element> {
-
-    typealias Listener = (Element) -> ()
+class Event<ElementType> {
     
-    var listener: Listener
+    typealias EventListener = (ElementType) -> ()
     
-    init(_ listener: @escaping Listener) {
-            self.listener = listener
+    private var _eventListener: EventListener
+    
+    init(_ eventListener: @escaping EventListener) {
+        self._eventListener = eventListener
     }
     
-    func on(_ observable: Observable<Element>) {
+    func subscribe(_ observable: Observable<ElementType>) {
         observable.events.append(EventBox(self))
+    }
+    
+    func onChange(_ elementType: ElementType) {
+        self._eventListener(elementType)
     }
     
 }
