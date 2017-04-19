@@ -8,12 +8,12 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "String"
-- "AssignmentPrecedence"
-- "Observable"
+- "StringLiteralType"
 - "Model"
 - "Date"
+- "Observable"
+- "AssignmentPrecedence"
 - "NewModel"
-- "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "Observable"]
 - !private ["Ps9AnyObject", "createdAt"]
@@ -60,7 +60,6 @@ depends-member:
 - ["PSo16NSObjectProtocol", "init"]
 - ["PSo14NSSecureCoding", "init"]
 - ["CSo8NSString", "init"]
-- ["Os5Never", "deinit"]
 - ["C4Flux8NewModel", "Date"]
 - ["C4Flux8NewModel", "Observable"]
 - ["C4Flux8NewModel", "String"]
@@ -73,13 +72,10 @@ depends-member:
 - ["C4Flux10Observable", "init"]
 - !private ["C4Flux10Observable", "value"]
 - ["Sq", "deinit"]
-- ["Vs12StaticString", "deinit"]
-- !private ["Vs12StaticString", "init"]
 - ["SS", "deinit"]
 - ["SS", "init"]
 - ["Ps16TextOutputStream", "init"]
 - ["Ps20TextOutputStreamable", "init"]
-- ["Su", "deinit"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
@@ -113,15 +109,12 @@ depends-nominal:
 - "PSo16NSObjectProtocol"
 - "PSo14NSSecureCoding"
 - "CSo8NSString"
-- "Os5Never"
 - "C4Flux8NewModel"
 - "C4Flux10Observable"
 - "Sq"
-- "Vs12StaticString"
 - "SS"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
-- "Su"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - "Ps34_ExpressibleByBuiltinStringLiteral"
 - "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
@@ -141,4 +134,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-interface-hash: "a22f20a447e778cb3976c40aafa11b1b"
+interface-hash: "bfceee47a7548dd9ed194ff35e8b110e"

@@ -7,8 +7,8 @@ provides-member:
 - ["C4Flux4View", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "View"
 - "UIView"
+- "View"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - ["Ps9AnyObject", ""]

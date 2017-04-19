@@ -11,6 +11,8 @@
 		055367711EA739BB0066A78F /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367701EA739BB0066A78F /* Diff.swift */; };
 		055367731EA739DB0066A78F /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367721EA739DB0066A78F /* Class.swift */; };
 		055367771EA73E0F0066A78F /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367761EA73E0F0066A78F /* Generate.swift */; };
+		055367791EA741EB0066A78F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367781EA741EB0066A78F /* Map.swift */; };
+		0553677B1EA747F90066A78F /* Fillter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553677A1EA747F90066A78F /* Fillter.swift */; };
 		05659FA91D22BB3D008CB76D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05659FA81D22BB3D008CB76D /* Assets.xcassets */; };
 		05659FAC1D22BB3D008CB76D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05659FAA1D22BB3D008CB76D /* LaunchScreen.storyboard */; };
 		05E4E0891EA68D9E00A57345 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0821EA68D9E00A57345 /* Observable.swift */; };
@@ -35,6 +37,8 @@
 		055367701EA739BB0066A78F /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
 		055367721EA739DB0066A78F /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		055367761EA73E0F0066A78F /* Generate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generate.swift; sourceTree = "<group>"; };
+		055367781EA741EB0066A78F /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		0553677A1EA747F90066A78F /* Fillter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fillter.swift; sourceTree = "<group>"; };
 		05659F9E1D22BB3D008CB76D /* Flux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05659FA81D22BB3D008CB76D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05659FAB1D22BB3D008CB76D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				055367701EA739BB0066A78F /* Diff.swift */,
 				055367721EA739DB0066A78F /* Class.swift */,
 				055367761EA73E0F0066A78F /* Generate.swift */,
+				055367781EA741EB0066A78F /* Map.swift */,
+				0553677A1EA747F90066A78F /* Fillter.swift */,
 			);
 			path = React;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0553677B1EA747F90066A78F /* Fillter.swift in Sources */,
 				05E4E08B1EA68D9E00A57345 /* EventBox.swift in Sources */,
 				05E4E0A91EA69D2D00A57345 /* Service.swift in Sources */,
 				05E4E0AB1EA69D3E00A57345 /* View.swift in Sources */,
@@ -299,6 +306,7 @@
 				05E4E09C1EA68F1700A57345 /* ViewController.swift in Sources */,
 				05E4E0A51EA69CF100A57345 /* Config.swift in Sources */,
 				05E4E0981EA68F0E00A57345 /* NewModel.swift in Sources */,
+				055367791EA741EB0066A78F /* Map.swift in Sources */,
 				05E4E08A1EA68D9E00A57345 /* Event.swift in Sources */,
 				05E4E0891EA68D9E00A57345 /* Observable.swift in Sources */,
 				055367731EA739DB0066A78F /* Class.swift in Sources */,

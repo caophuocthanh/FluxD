@@ -8,14 +8,14 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "Event"
-- "EventBox"
 - "AssignmentPrecedence"
+- "EventBox"
 depends-member:
 - !private ["Ps9AnyObject", "event"]
 - ["Ps9AnyObject", ""]
 - ["C4Flux5Event", "deinit"]
+- ["C4Flux8EventBox", "Element"]
 - ["C4Flux8EventBox", "Event"]
-- ["C4Flux8EventBox", "T"]
 - ["C4Flux8EventBox", "deinit"]
 - ["C4Flux8EventBox", "event"]
 - ["C4Flux8EventBox", "init"]
@@ -37,4 +37,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-interface-hash: "7de4a53c8cfe79a320a4a809c25efc9b"
+interface-hash: "ace179de4d36a36ad72d4e28812b9685"

@@ -7,11 +7,11 @@ provides-member:
 - ["C4Flux5Class", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "Date"
 - "Observable"
+- "StringLiteralType"
 - "String"
 - "Class"
-- "Date"
-- "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "Date"]
 - ["Ps9AnyObject", "Observable"]
@@ -113,4 +113,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-interface-hash: "1c24825435257ed15bc1154e713a8ad7"
+interface-hash: "a89db71249b2d97576a5c85ac6bbcbc7"

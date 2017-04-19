@@ -6,25 +6,25 @@ provides-nominal:
 provides-member:
 - ["C4Flux15BViewController", ""]
 provides-dynamic-lookup:
-- "didReceiveMemoryWarning"
-- "viewDidDisappear"
 - "viewWillDisappear"
-- "viewDidAppear"
+- "viewDidDisappear"
+- "didReceiveMemoryWarning"
 - "viewDidLoad"
+- "viewDidAppear"
 depends-top-level:
-- "AssignmentPrecedence"
-- "CastingPrecedence"
+- !private "??"
 - !private "print"
 - !private "Store"
-- !private "??"
-- !private "UIColor"
 - !private "UnicodeScalarType"
-- !private "BooleanLiteralType"
+- "UIViewController"
+- "CastingPrecedence"
+- "AssignmentPrecedence"
 - "BViewController"
-- "NewModel"
 - "Bool"
 - !private "StringLiteralType"
-- "UIViewController"
+- !private "BooleanLiteralType"
+- "NewModel"
+- !private "UIColor"
 depends-member:
 - !private ["Ps9AnyObject", "Store"]
 - !private ["Ps9AnyObject", "UIColor"]

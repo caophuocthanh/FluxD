@@ -9,12 +9,12 @@
 import UIKit
 
 /* ReactBox */
-class EventBox<T> {
+class EventBox<Element> {
     // TODO: What ?????
-    //weak var react: React<T>?
-    var event: Event<T>?
+    //weak var react: React<Element>?
+    var event: Event<Element>?
     
-    init(_ event: Event<T>) {
+    init(_ event: Event<Element>) {
         self.event = event
     }
 }

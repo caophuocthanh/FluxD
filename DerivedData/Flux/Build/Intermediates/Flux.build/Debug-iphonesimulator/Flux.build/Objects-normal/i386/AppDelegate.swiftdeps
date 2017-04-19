@@ -7,31 +7,31 @@ provides-member:
 - ["C4Flux11AppDelegate", ""]
 provides-dynamic-lookup:
 - "application"
-- "applicationDidEnterBackground"
 - "applicationWillEnterForeground"
-- "window"
-- "applicationWillResignActive"
-- "applicationWillTerminate"
 - "setup"
 - "applicationDidBecomeActive"
+- "applicationWillResignActive"
+- "applicationWillTerminate"
+- "window"
+- "applicationDidEnterBackground"
 depends-top-level:
-- "UIApplication"
-- "Bool"
-- "AssignmentPrecedence"
-- "UIWindow"
-- !private "NewModel"
-- !private "UIScreen"
-- !private "UINavigationController"
 - !private "Store"
 - !private "print"
+- !private "StringLiteralType"
+- !private "UIScreen"
+- "Bool"
+- !private "UINavigationController"
 - !private "BooleanLiteralType"
-- !private "UnicodeScalarType"
+- "AppDelegate"
+- "UIApplicationLaunchOptionsKey"
+- "UIWindow"
+- !private "ViewController"
 - "UIApplicationDelegate"
 - "UIResponder"
-- !private "StringLiteralType"
-- "UIApplicationLaunchOptionsKey"
-- "AppDelegate"
-- !private "ViewController"
+- !private "NewModel"
+- "UIApplication"
+- "AssignmentPrecedence"
+- !private "UnicodeScalarType"
 depends-member:
 - !private ["Ps9AnyObject", "NewModel"]
 - !private ["Ps9AnyObject", "Store"]
@@ -122,6 +122,7 @@ depends-member:
 - ["Ps7CVarArg", "setup"]
 - ["Ps7CVarArg", "window"]
 - ["Ps7CVarArg", ""]
+- !private ["C4Flux5Class", "init"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "NewModel"]
 - !private ["Ps28CustomDebugStringConvertible", "Store"]
@@ -239,6 +240,7 @@ depends-member:
 - ["Ps8Hashable", ""]
 - !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "init"]
+- !private ["C4Flux5Model", "init"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "makeKeyAndVisible"]
 - !private ["PSo8NSCoding", "rootViewController"]
@@ -477,6 +479,7 @@ depends-nominal:
 - !private "PSo15CALayerDelegate"
 - "VSC6CGRect"
 - "Ps7CVarArg"
+- !private "C4Flux5Class"
 - !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
 - !private "Ps29CustomPlaygroundQuickLookable"
@@ -490,6 +493,7 @@ depends-nominal:
 - "Ps8Hashable"
 - !private "Ps25LosslessStringConvertible"
 - !private "Ps10MirrorPath"
+- !private "C4Flux5Model"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
 - !private "PSo26NSExtensionRequestHandling"

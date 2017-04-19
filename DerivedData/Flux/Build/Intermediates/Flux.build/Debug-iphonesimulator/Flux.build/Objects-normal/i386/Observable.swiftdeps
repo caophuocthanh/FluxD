@@ -7,18 +7,18 @@ provides-member:
 - ["C4Flux10Observable", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "AssignmentPrecedence"
-- "Observable"
 - !private "Event"
+- "Observable"
 - "EventBox"
+- "AssignmentPrecedence"
 depends-member:
 - !private ["Ps9AnyObject", "Event"]
 - !private ["Ps9AnyObject", "Observable"]
-- !private ["Ps9AnyObject", "bind"]
 - !private ["Ps9AnyObject", "event"]
 - !private ["Ps9AnyObject", "events"]
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "listener"]
+- !private ["Ps9AnyObject", "on"]
 - !private ["Ps9AnyObject", "value"]
 - ["Ps9AnyObject", ""]
 - !private ["Sa", "Index"]
@@ -65,10 +65,10 @@ depends-member:
 - !private ["Vs18EnumeratedIterator", "Element"]
 - !private ["Vs18EnumeratedSequence", "Iterator"]
 - ["Vs18EnumeratedSequence", "deinit"]
-- !private ["C4Flux5Event", "bind"]
 - ["C4Flux5Event", "deinit"]
 - !private ["C4Flux5Event", "init"]
 - !private ["C4Flux5Event", "listener"]
+- !private ["C4Flux5Event", "on"]
 - ["C4Flux8EventBox", "deinit"]
 - !private ["C4Flux8EventBox", "event"]
 - !private ["Ps25ExpressibleByArrayLiteral", "Index"]
@@ -99,10 +99,10 @@ depends-member:
 - !private ["Ps16MutableIndexable", "_Element"]
 - !private ["Ps16MutableIndexable", "enumerated"]
 - !private ["Ps16MutableIndexable", "remove"]
+- ["C4Flux10Observable", "Element"]
 - !private ["C4Flux10Observable", "Event"]
 - ["C4Flux10Observable", "EventBox"]
 - ["C4Flux10Observable", "Observable"]
-- ["C4Flux10Observable", "T"]
 - ["C4Flux10Observable", "deinit"]
 - ["C4Flux10Observable", "events"]
 - ["C4Flux10Observable", "init"]
@@ -192,4 +192,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-interface-hash: "4d34e44a374e766bea5c76791b22f310"
+interface-hash: "a81d29582908c303e3710133ac4af001"

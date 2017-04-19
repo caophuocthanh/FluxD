@@ -8,7 +8,6 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "Generate"
-- "BaseTableViewCell"
 depends-member:
 - ["Ps9AnyObject", ""]
 - ["C4Flux8Generate", "deinit"]
@@ -28,4 +27,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-interface-hash: "3ddb5e37e98f3f9c9b1ff1d30e2a1d8d"
+interface-hash: "637a593bdc04f1e7b473082b29822794"

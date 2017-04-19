@@ -7,19 +7,19 @@ provides-member:
 - ["C4Flux5Store", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "=="
-- "AssignmentPrecedence"
-- !private "FloatLiteralType"
 - !private "!"
+- !private "StringLiteralType"
+- "String"
 - !private "IntegerLiteralType"
 - "StoreModel"
-- "Store"
 - "Model"
+- !private "FloatLiteralType"
 - !private ">"
 - !private "&&"
-- "String"
-- !private "StringLiteralType"
 - !private "print"
+- "Store"
+- !private "=="
+- "AssignmentPrecedence"
 depends-member:
 - ["Ps9AnyObject", "Store"]
 - ["Ps9AnyObject", "StoreModel"]

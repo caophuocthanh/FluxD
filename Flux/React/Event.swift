@@ -9,9 +9,9 @@
 import UIKit
 
 /* React */
-class Event<T> {
+class Event<Element> {
 
-    typealias Listener = (T) -> ()
+    typealias Listener = (Element) -> ()
     
     var listener: Listener
     
@@ -19,7 +19,7 @@ class Event<T> {
             self.listener = listener
     }
     
-    func bind(_ observable: Observable<T>) {
+    func on(_ observable: Observable<Element>) {
         observable.events.append(EventBox(self))
     }
     

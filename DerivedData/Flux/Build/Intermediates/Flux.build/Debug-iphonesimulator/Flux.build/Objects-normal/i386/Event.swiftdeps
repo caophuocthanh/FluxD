@@ -7,10 +7,10 @@ provides-member:
 - ["C4Flux5Event", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "AssignmentPrecedence"
+- !private "EventBox"
 - "Observable"
 - "Event"
-- !private "EventBox"
+- "AssignmentPrecedence"
 depends-member:
 - !private ["Ps9AnyObject", "EventBox"]
 - !private ["Ps9AnyObject", "events"]
@@ -41,14 +41,14 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "append"]
+- ["C4Flux5Event", "Element"]
 - !private ["C4Flux5Event", "EventBox"]
 - ["C4Flux5Event", "Listener"]
 - ["C4Flux5Event", "Observable"]
-- ["C4Flux5Event", "T"]
-- ["C4Flux5Event", "bind"]
 - ["C4Flux5Event", "deinit"]
 - ["C4Flux5Event", "init"]
 - ["C4Flux5Event", "listener"]
+- ["C4Flux5Event", "on"]
 - ["C4Flux8EventBox", "deinit"]
 - !private ["C4Flux8EventBox", "init"]
 - !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
@@ -135,4 +135,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-interface-hash: "64c0d25380e0b39be12be5962a5af7a1"
+interface-hash: "f21f278e4d603fe5e6a2ec80db3e1be0"

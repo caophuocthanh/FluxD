@@ -9,9 +9,9 @@
 import Foundation
 
 /* Dynamic */
-class Observable<T> {
+class Observable<Element> {
     
-    var value: T {
+    var value: Element {
         didSet {
             for (index, eventBox) in self.events.enumerated() {
                 guard let event = eventBox.event else {
@@ -23,16 +23,16 @@ class Observable<T> {
         }
     }
     
-    var events: [EventBox<T>] = []
+    var events: [EventBox<Element>] = []
     
-    init(_ value: T) {
+    init(_ value: Element) {
         self.value = value
     }
     
-    func subscribe(_ handle: @escaping (Observable<T>) -> ()) {
-        Event<T> { (value) in
-            handle(Observable<T>(value))
-            }.bind(self)
+    func subscribe(_ handle: @escaping (Observable<Element>) -> ()) {
+        Event<Element> {(value) in
+            handle(Observable<Element>(value))
+            }.on(self)
     }
     
 }

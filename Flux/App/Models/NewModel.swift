@@ -12,12 +12,16 @@ class NewModel: Model {
     
     let name = Observable<String>("")
     
-    init(id: String, createAt: Date?, name: String) {
+    required init(id: String, createAt: Date?, name: String) {
         super.init()
         self.id.value = id
         if let _create_at = createAt {
             self.createdAt?.value = _create_at
         }
         self.name.value = name
+    }
+    
+    required init() {
+        super.init()
     }
 }
