@@ -1,0 +1,112 @@
+[
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 321,
+  "remove": 8,
+  "text": "e",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1304,
+  "remove": 1,
+  "text": "D",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1312,
+  "remove": 2,
+  "text": "T",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1317,
+  "remove": 21,
+  "text": ".now() + Double(I",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1369,
+  "text": " / Double(NSEC_PER_SEC)",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1378,
+  "remove": 1,
+  "text": "D",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1386,
+  "remove": 2,
+  "text": "Queue.main.asyncA",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1395,
+  "remove": 9,
+  "text": "adline:",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1406,
+  "remove": 25,
+  "text": "elayTime0)",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1750,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1931,
+  "remove": 1,
+  "text": "D",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1939,
+  "remove": 2,
+  "text": "T",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1944,
+  "remove": 21,
+  "text": ".now() + Double(I",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 1996,
+  "text": " / Double(NSEC_PER_SEC)",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 2005,
+  "remove": 1,
+  "text": "D",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 2013,
+  "remove": 2,
+  "text": "Queue.main.asyncA",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 2022,
+  "remove": 9,
+  "text": "adline:",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 2033,
+  "remove": 25,
+  "text": "elayTime0)",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/ViewController.swift",
+  "offset": 2628,
+  "text": "_ ",
+ }
+]

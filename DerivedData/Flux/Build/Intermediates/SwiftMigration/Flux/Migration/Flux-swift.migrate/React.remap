@@ -1,0 +1,18 @@
+[
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/React.swift",
+  "offset": 211,
+  "remove": 1,
+  "text": "(T)",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/React.swift",
+  "offset": 277,
+  "text": "@escaping ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/React.swift",
+  "offset": 347,
+  "text": "_ ",
+ }
+]

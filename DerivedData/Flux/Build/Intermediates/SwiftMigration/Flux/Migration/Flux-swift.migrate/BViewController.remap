@@ -1,0 +1,28 @@
+[
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/BViewController.swift",
+  "offset": 199,
+  "text": "file",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/BViewController.swift",
+  "offset": 440,
+  "remove": 8,
+  "text": "e",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/BViewController.swift",
+  "offset": 1367,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/BViewController.swift",
+  "offset": 1501,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/BViewController.swift",
+  "offset": 1633,
+  "text": "_ ",
+ }
+]

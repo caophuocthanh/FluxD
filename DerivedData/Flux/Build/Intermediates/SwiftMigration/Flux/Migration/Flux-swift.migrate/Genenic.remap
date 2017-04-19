@@ -1,0 +1,13 @@
+[
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/Genenic.swift",
+  "offset": 267,
+  "text": "d",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/Genenic.swift",
+  "offset": 366,
+  "remove": 8,
+  "text": "(at: ",
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 295,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 369,
+  "remove": 8,
+  "text": "UIApplicationLaunchOptionsKey",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 381,
+  "remove": 7,
+  "text": "y",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 460,
+  "remove": 9,
+  "text": "n",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 1487,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 2005,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 2443,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 2674,
+  "text": "_ ",
+ },
+ {
+  "file": "/Users/thanh/Development/ios/FluxD/Flux/AppDelegate.swift",
+  "offset": 2940,
+  "text": "_ ",
+ }
+]
