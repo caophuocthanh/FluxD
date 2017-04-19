@@ -11,6 +11,8 @@ import Foundation
 /* Dynamic */
 class Observable<Element> {
     
+    typealias EventHandler = (Observable<Element>) -> ()
+    
     var value: Element {
         didSet {
             for (index, eventBox) in self.events.enumerated() {
@@ -18,7 +20,7 @@ class Observable<Element> {
                     self.events.remove(at: index)
                     return
                 }
-                event.listener(value)
+                event.listener(self.value)
             }
         }
     }
@@ -29,9 +31,9 @@ class Observable<Element> {
         self.value = value
     }
     
-    func subscribe(_ handle: @escaping (Observable<Element>) -> ()) {
+    func subscribe(_ event: @escaping EventHandler) {
         Event<Element> {(value) in
-            handle(Observable<Element>(value))
+            event(Observable<Element>(value))
             }.on(self)
     }
     
