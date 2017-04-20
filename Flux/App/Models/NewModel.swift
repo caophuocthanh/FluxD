@@ -8,9 +8,9 @@
 
 import UIKit
 
-class NewModel: Model {
+class NewModel: Object {
     
-    let name = Observable<String>("")
+    var name = Observable<String>("")
     
     required init(id: String, createAt: Date?, name: String) {
         super.init()

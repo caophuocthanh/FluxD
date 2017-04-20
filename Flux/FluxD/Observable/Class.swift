@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Class {
+class Class: AnyObject {
     
     var createdAt: Observable<Date>? = Observable<Date>(Date())
     var updateAt: Observable<Date>? = Observable<Date>(Date())
@@ -20,5 +20,15 @@ class Class {
     deinit {
         print("Class deinit:", self)
     }
+    
+    func map(_ JSON: Any) -> Class {
+        return self
+    }
+    
+    func toJSON() -> [String: Any] {
+        return [:]
+    }
+    
+    
 
 }

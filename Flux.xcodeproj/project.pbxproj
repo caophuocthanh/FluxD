@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0553676F1EA739840066A78F /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553676E1EA739840066A78F /* Debounce.swift */; };
-		055367711EA739BB0066A78F /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367701EA739BB0066A78F /* Diff.swift */; };
-		055367731EA739DB0066A78F /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367721EA739DB0066A78F /* Class.swift */; };
-		055367771EA73E0F0066A78F /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367761EA73E0F0066A78F /* Generate.swift */; };
-		055367791EA741EB0066A78F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055367781EA741EB0066A78F /* Map.swift */; };
-		0553677B1EA747F90066A78F /* Fillter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553677A1EA747F90066A78F /* Fillter.swift */; };
+		053345491EA87248006ABAD8 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453B1EA87248006ABAD8 /* Class.swift */; };
+		0533454A1EA87248006ABAD8 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453C1EA87248006ABAD8 /* Debounce.swift */; };
+		0533454B1EA87248006ABAD8 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453D1EA87248006ABAD8 /* Diff.swift */; };
+		0533454C1EA87248006ABAD8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453E1EA87248006ABAD8 /* Event.swift */; };
+		0533454D1EA87248006ABAD8 /* EventBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453F1EA87248006ABAD8 /* EventBox.swift */; };
+		0533454E1EA87248006ABAD8 /* Fillter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345401EA87248006ABAD8 /* Fillter.swift */; };
+		0533454F1EA87248006ABAD8 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345411EA87248006ABAD8 /* Generate.swift */; };
+		053345501EA87248006ABAD8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345421EA87248006ABAD8 /* Map.swift */; };
+		053345511EA87248006ABAD8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345431EA87248006ABAD8 /* Observable.swift */; };
+		053345521EA87248006ABAD8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345441EA87248006ABAD8 /* Queue.swift */; };
+		053345531EA87248006ABAD8 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345461EA87248006ABAD8 /* Object.swift */; };
+		053345541EA87248006ABAD8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345471EA87248006ABAD8 /* Store.swift */; };
+		053345551EA87248006ABAD8 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345481EA87248006ABAD8 /* Pool.swift */; };
 		05659FA91D22BB3D008CB76D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05659FA81D22BB3D008CB76D /* Assets.xcassets */; };
 		05659FAC1D22BB3D008CB76D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05659FAA1D22BB3D008CB76D /* LaunchScreen.storyboard */; };
-		05E4E0891EA68D9E00A57345 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0821EA68D9E00A57345 /* Observable.swift */; };
-		05E4E08A1EA68D9E00A57345 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0831EA68D9E00A57345 /* Event.swift */; };
-		05E4E08B1EA68D9E00A57345 /* EventBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0841EA68D9E00A57345 /* EventBox.swift */; };
-		05E4E08C1EA68D9E00A57345 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0861EA68D9E00A57345 /* Model.swift */; };
-		05E4E08D1EA68D9E00A57345 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0871EA68D9E00A57345 /* Store.swift */; };
-		05E4E08E1EA68D9E00A57345 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0881EA68D9E00A57345 /* StoreModel.swift */; };
 		05E4E0981EA68F0E00A57345 /* NewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0971EA68F0E00A57345 /* NewModel.swift */; };
 		05E4E09B1EA68F1700A57345 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0991EA68F1700A57345 /* BViewController.swift */; };
 		05E4E09C1EA68F1700A57345 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E09A1EA68F1700A57345 /* ViewController.swift */; };
@@ -30,26 +31,26 @@
 		05E4E0A71EA69D1100A57345 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0A61EA69D1100A57345 /* BaseModel.swift */; };
 		05E4E0A91EA69D2D00A57345 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0A81EA69D2D00A57345 /* Service.swift */; };
 		05E4E0AB1EA69D3E00A57345 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0AA1EA69D3E00A57345 /* View.swift */; };
-		05FA6F8D1EA758BF0047BFCF /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FA6F8C1EA758BF0047BFCF /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0553676E1EA739840066A78F /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
-		055367701EA739BB0066A78F /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
-		055367721EA739DB0066A78F /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
-		055367761EA73E0F0066A78F /* Generate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generate.swift; sourceTree = "<group>"; };
-		055367781EA741EB0066A78F /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
-		0553677A1EA747F90066A78F /* Fillter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fillter.swift; sourceTree = "<group>"; };
+		0533453B1EA87248006ABAD8 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		0533453C1EA87248006ABAD8 /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
+		0533453D1EA87248006ABAD8 /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
+		0533453E1EA87248006ABAD8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0533453F1EA87248006ABAD8 /* EventBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBox.swift; sourceTree = "<group>"; };
+		053345401EA87248006ABAD8 /* Fillter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fillter.swift; sourceTree = "<group>"; };
+		053345411EA87248006ABAD8 /* Generate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generate.swift; sourceTree = "<group>"; };
+		053345421EA87248006ABAD8 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		053345431EA87248006ABAD8 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		053345441EA87248006ABAD8 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		053345461EA87248006ABAD8 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		053345471EA87248006ABAD8 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		053345481EA87248006ABAD8 /* Pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
 		05659F9E1D22BB3D008CB76D /* Flux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05659FA81D22BB3D008CB76D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05659FAB1D22BB3D008CB76D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05659FAD1D22BB3D008CB76D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05E4E0821EA68D9E00A57345 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		05E4E0831EA68D9E00A57345 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		05E4E0841EA68D9E00A57345 /* EventBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBox.swift; sourceTree = "<group>"; };
-		05E4E0861EA68D9E00A57345 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		05E4E0871EA68D9E00A57345 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		05E4E0881EA68D9E00A57345 /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		05E4E0971EA68F0E00A57345 /* NewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewModel.swift; sourceTree = "<group>"; };
 		05E4E0991EA68F1700A57345 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		05E4E09A1EA68F1700A57345 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		05E4E0A61EA69D1100A57345 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		05E4E0A81EA69D2D00A57345 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		05E4E0AA1EA69D3E00A57345 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		05FA6F8C1EA758BF0047BFCF /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +73,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053345381EA87248006ABAD8 /* FluxD */ = {
+			isa = PBXGroup;
+			children = (
+				053345391EA87248006ABAD8 /* Extentions */,
+				0533453A1EA87248006ABAD8 /* Observable */,
+				053345451EA87248006ABAD8 /* Store */,
+			);
+			path = FluxD;
+			sourceTree = "<group>";
+		};
+		053345391EA87248006ABAD8 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		0533453A1EA87248006ABAD8 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				0533453B1EA87248006ABAD8 /* Class.swift */,
+				0533453C1EA87248006ABAD8 /* Debounce.swift */,
+				0533453D1EA87248006ABAD8 /* Diff.swift */,
+				0533453E1EA87248006ABAD8 /* Event.swift */,
+				0533453F1EA87248006ABAD8 /* EventBox.swift */,
+				053345401EA87248006ABAD8 /* Fillter.swift */,
+				053345411EA87248006ABAD8 /* Generate.swift */,
+				053345421EA87248006ABAD8 /* Map.swift */,
+				053345431EA87248006ABAD8 /* Observable.swift */,
+				053345441EA87248006ABAD8 /* Queue.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		053345451EA87248006ABAD8 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				053345461EA87248006ABAD8 /* Object.swift */,
+				053345471EA87248006ABAD8 /* Store.swift */,
+				053345481EA87248006ABAD8 /* Pool.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		053345561EA8729B006ABAD8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		05659F951D22BB3D008CB76D = {
 			isa = PBXGroup;
 			children = (
@@ -92,42 +143,14 @@
 		05659FA01D22BB3D008CB76D /* Flux */ = {
 			isa = PBXGroup;
 			children = (
-				05E4E09F1EA694F000A57345 /* Extentions */,
+				053345561EA8729B006ABAD8 /* Extensions */,
+				053345381EA87248006ABAD8 /* FluxD */,
 				05E4E08F1EA68E0C00A57345 /* App */,
-				05E4E0811EA68D9E00A57345 /* React */,
-				05E4E0851EA68D9E00A57345 /* Store */,
 				05659FA81D22BB3D008CB76D /* Assets.xcassets */,
 				05659FAA1D22BB3D008CB76D /* LaunchScreen.storyboard */,
 				05659FAD1D22BB3D008CB76D /* Info.plist */,
 			);
 			path = Flux;
-			sourceTree = "<group>";
-		};
-		05E4E0811EA68D9E00A57345 /* React */ = {
-			isa = PBXGroup;
-			children = (
-				05E4E0821EA68D9E00A57345 /* Observable.swift */,
-				05E4E0831EA68D9E00A57345 /* Event.swift */,
-				05E4E0841EA68D9E00A57345 /* EventBox.swift */,
-				0553676E1EA739840066A78F /* Debounce.swift */,
-				055367701EA739BB0066A78F /* Diff.swift */,
-				055367721EA739DB0066A78F /* Class.swift */,
-				055367761EA73E0F0066A78F /* Generate.swift */,
-				055367781EA741EB0066A78F /* Map.swift */,
-				0553677A1EA747F90066A78F /* Fillter.swift */,
-				05FA6F8C1EA758BF0047BFCF /* Queue.swift */,
-			);
-			path = React;
-			sourceTree = "<group>";
-		};
-		05E4E0851EA68D9E00A57345 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				05E4E0861EA68D9E00A57345 /* Model.swift */,
-				05E4E0871EA68D9E00A57345 /* Store.swift */,
-				05E4E0881EA68D9E00A57345 /* StoreModel.swift */,
-			);
-			path = Store;
 			sourceTree = "<group>";
 		};
 		05E4E08F1EA68E0C00A57345 /* App */ = {
@@ -200,13 +223,6 @@
 				05E4E0A61EA69D1100A57345 /* BaseModel.swift */,
 			);
 			path = Bases;
-			sourceTree = "<group>";
-		};
-		05E4E09F1EA694F000A57345 /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,28 +314,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0553677B1EA747F90066A78F /* Fillter.swift in Sources */,
-				05E4E08B1EA68D9E00A57345 /* EventBox.swift in Sources */,
+				053345541EA87248006ABAD8 /* Store.swift in Sources */,
 				05E4E0A91EA69D2D00A57345 /* Service.swift in Sources */,
-				05FA6F8D1EA758BF0047BFCF /* Queue.swift in Sources */,
 				05E4E0AB1EA69D3E00A57345 /* View.swift in Sources */,
+				0533454D1EA87248006ABAD8 /* EventBox.swift in Sources */,
+				053345521EA87248006ABAD8 /* Queue.swift in Sources */,
+				0533454A1EA87248006ABAD8 /* Debounce.swift in Sources */,
+				053345511EA87248006ABAD8 /* Observable.swift in Sources */,
+				053345501EA87248006ABAD8 /* Map.swift in Sources */,
+				0533454F1EA87248006ABAD8 /* Generate.swift in Sources */,
 				05E4E09B1EA68F1700A57345 /* BViewController.swift in Sources */,
 				05E4E0A31EA69CDE00A57345 /* Templates.swift in Sources */,
+				0533454E1EA87248006ABAD8 /* Fillter.swift in Sources */,
 				05E4E0A71EA69D1100A57345 /* BaseModel.swift in Sources */,
-				05E4E08D1EA68D9E00A57345 /* Store.swift in Sources */,
+				053345551EA87248006ABAD8 /* Pool.swift in Sources */,
+				0533454B1EA87248006ABAD8 /* Diff.swift in Sources */,
 				05E4E09C1EA68F1700A57345 /* ViewController.swift in Sources */,
 				05E4E0A51EA69CF100A57345 /* Config.swift in Sources */,
+				053345531EA87248006ABAD8 /* Object.swift in Sources */,
 				05E4E0981EA68F0E00A57345 /* NewModel.swift in Sources */,
-				055367791EA741EB0066A78F /* Map.swift in Sources */,
-				05E4E08A1EA68D9E00A57345 /* Event.swift in Sources */,
-				05E4E0891EA68D9E00A57345 /* Observable.swift in Sources */,
-				055367731EA739DB0066A78F /* Class.swift in Sources */,
-				05E4E08C1EA68D9E00A57345 /* Model.swift in Sources */,
+				053345491EA87248006ABAD8 /* Class.swift in Sources */,
 				05E4E09E1EA68F4100A57345 /* AppDelegate.swift in Sources */,
-				055367771EA73E0F0066A78F /* Generate.swift in Sources */,
-				0553676F1EA739840066A78F /* Debounce.swift in Sources */,
-				05E4E08E1EA68D9E00A57345 /* StoreModel.swift in Sources */,
-				055367711EA739BB0066A78F /* Diff.swift in Sources */,
+				0533454C1EA87248006ABAD8 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

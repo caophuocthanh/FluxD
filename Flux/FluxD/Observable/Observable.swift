@@ -11,7 +11,7 @@ import Foundation
 /* Dynamic */
 class Observable<ElementType> {
     
-    typealias EventHandler = (Observable<ElementType>) -> ()
+    typealias EventHandler = (Observable<ElementType>, Observable<ElementType>) -> ()
     
     var value: ElementType {
         didSet {
@@ -20,7 +20,7 @@ class Observable<ElementType> {
                     self.events.remove(at: index)
                     return
                 }
-                event.onChange(value)
+                event.onChange(oldValue, value)
             }
         }
     }
@@ -32,13 +32,13 @@ class Observable<ElementType> {
     }
     
     func subscribe(_ event: @escaping EventHandler) {
-        Event<ElementType> { (value) in
-            event(Observable<ElementType>(value))
-            }.subscribe(self)
+        Event<ElementType> { (oldObservable, newObservable) in
+            event(Observable<ElementType>(oldObservable) ,Observable<ElementType>(newObservable))
+            }.on(self)
     }
     
-    deinit {
-        print("Observable deinit:", self)
-    }
+//    deinit {
+//        print("Observable deinit:", self)
+//    }
     
 }

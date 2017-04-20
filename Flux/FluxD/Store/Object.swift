@@ -8,7 +8,9 @@
 
 import UIKit
 
-/* Model */
-class Model: Class {
+/*
+ * Object
+ */
+class Object: Class {
     var id: Observable<String> = Observable<String>("undefined")
 }

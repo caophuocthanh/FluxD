@@ -9,8 +9,7 @@
 import UIKit
 
 class BViewController: UIViewController {
-
-    fileprivate var newmodel: NewModel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,30 +19,30 @@ class BViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        let ware =  Store.defaultStore
-        let a = ware.fetch("1")
+        let ware =  Store.mainStore
+        let a = ware.fetch("1").value
         
         print("ware.fetch:", a)
         
-        newmodel = a[0].model?.value as! NewModel
-        
-        print(newmodel.self)
-        print("before ac.model.id.reacts:", newmodel.name.events)
-        
-        newmodel.name.subscribe { [weak self] in
-            print(self ?? ""," =======>>>>> react B: ",$0)
+        if let newmodel = a.objects.value.first as? NewModel {
+            
+            print(newmodel.self)
+            print("before ac.model.id.reacts:", newmodel.name.events)
+            
+            newmodel.name.subscribe { [weak self] in
+                print(self ?? ""," =======>>>>> react B: ",$1.value)
             }
-        
-        print("ac.model.id.value:", newmodel.name.value)
-        print("ac.model.id.reacts:", newmodel.name.events)
-        
-        
-        print("------SET VALUE")
-        newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
-        
+            
+            print("ac.model.id.value:", newmodel.name.value)
+            print("ac.model.id.reacts:", newmodel.name.events)
+            
+            
+            print("------SET VALUE")
+            newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+        }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,5 +66,5 @@ class BViewController: UIViewController {
     deinit {
         print("deinit: ",self )
     }
-
+    
 }

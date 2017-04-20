@@ -11,7 +11,7 @@ import UIKit
 /* React */
 class Event<ElementType> {
     
-    typealias EventListener = (ElementType) -> ()
+    typealias EventListener = (ElementType, ElementType) -> ()
     
     private var _eventListener: EventListener
     
@@ -19,16 +19,16 @@ class Event<ElementType> {
         self._eventListener = eventListener
     }
     
-    func subscribe(_ observable: Observable<ElementType>) {
+    func on(_ observable: Observable<ElementType>) {
         observable.events.append(EventBox(self))
     }
     
-    func onChange(_ elementType: ElementType) {
-        self._eventListener(elementType)
+    func onChange(_ elementOld: ElementType, _ elementNew: ElementType) {
+        self._eventListener(elementOld, elementNew)
     }
     
-    deinit {
-        print("Event deinit:", self)
-    }
+//    deinit {
+//        print("Event deinit:", self)
+//    }
     
 }

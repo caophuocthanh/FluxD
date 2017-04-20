@@ -22,26 +22,27 @@ class ViewController: UIViewController {
         
         print("\n\n-----------------ViewController viewDidLoad-----------------\n")
         
-        let ware =  Store.defaultStore
-        let a = ware.fetch("1")
+        let ware =  Store.mainStore
+        let a = ware.fetch("1").value
         
         print("ware.fetch:", a)
         
-        let newmodel: NewModel = a[0].model?.value as! NewModel
-        print(newmodel.self)
-        
-        print("before ac.model.id.reacts:", newmodel.name.events)
-        
-        newmodel.name.subscribe { [weak self] in
-            print(self ?? ""," =======>>>>> react A: ",$0)
+        if let newmodel: NewModel = a.objects.value.first as? NewModel {
+            print(newmodel.self)
+            
+            print("before ac.model.id.reacts:", newmodel.name.events)
+            
+            newmodel.name.subscribe { [weak self] in
+                print(self ?? ""," =======>>>>> react A: ",$1.value)
+            }
+            
+            print("ac.model.id.value:", newmodel.name.value)
+            print("ac.model.id.reacts:", newmodel.name.events)
+            
+            
+            print("------SET VALUE")
+            newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
         }
-        
-        print("ac.model.id.value:", newmodel.name.value)
-        print("ac.model.id.reacts:", newmodel.name.events)
-        
-        
-        print("------SET VALUE")
-        newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
         
         /// /////////////////////////////////////////////////////////////
         
@@ -50,14 +51,14 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(BViewController(), animated: true)
         }
         
-
-        let atest: Observable<[String]> = Observable<[String]>([])        
+        
+        let atest: Observable<[String]> = Observable<[String]>([])
         
         atest.subscribe { [weak self] in
-                print(self ?? "" ," \n\n=======>>>>> react TEST A COUNT: ",$0.value.count, "\n")
+            print(self ?? "" ," \n\n=======>>>>> react TEST A COUNT: ",$1.value.count, "\n")
         }
         
-
+        
         print("------START-----")
         for i in 0..<10 {
             autoreleasepool {
@@ -81,20 +82,23 @@ class ViewController: UIViewController {
         
         let delayTime0 = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime0) {
-            let ware =  Store.defaultStore
-            let a = ware.fetch("1")
+            let ware =  Store.mainStore
+            let a = ware.fetch("1").value
+            
+            
             
             print("ware.fetch:", a)
             
-            let newmodel: NewModel = a[0].model?.value as! NewModel
-            print(newmodel.self)
-            
-            print("ac.model.id.value:", newmodel.name.value)
-            print("ac.model.id.reacts:", newmodel.name.events)
-            
-            
-            print("------SET VALUE")
-            newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+            if let newmodel: NewModel = a.objects.value.first as? NewModel {
+                print(newmodel.self)
+                
+                print("ac.model.id.value:", newmodel.name.value)
+                print("ac.model.id.reacts:", newmodel.name.events)
+                
+                
+                print("------SET VALUE")
+                newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+            }
         }
     }
     
