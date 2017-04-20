@@ -25,7 +25,7 @@ class BViewController: UIViewController {
         
         print("ware.fetch:", a)
         
-        newmodel = a[0].model as! NewModel
+        newmodel = a[0].model?.value as! NewModel
         
         print(newmodel.self)
         print("before ac.model.id.reacts:", newmodel.name.events)

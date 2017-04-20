@@ -10,9 +10,9 @@ import UIKit
 
 class StoreModel {
     var storeIndentifiers = [String]()
-    var model: Model!
+    var model: Observable<Model>?
     init(_ model: Model, storeIndentifier: String) {
-        self.model = model
+        self.model = Observable<Model>(model)
         self.storeIndentifiers.append(storeIndentifier)
     }
 }

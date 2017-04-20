@@ -12,10 +12,14 @@ import UIKit
 class EventBox<ElementEventType> {
     
     // TODO: What ?????
-    //weak var react: React<ElementEventType>?
+    //weak var event: Event<ElementEventType>?
     var event: Event<ElementEventType>?
     
     init(_ event: Event<ElementEventType>) {
         self.event = event
+    }
+    
+    deinit {
+        print("EventBox deinit:", self)
     }
 }

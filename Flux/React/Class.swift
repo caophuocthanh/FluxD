@@ -10,12 +10,15 @@ import UIKit
 
 class Class {
     
-    var id: Observable<String> = Observable<String>("")
     var createdAt: Observable<Date>? = Observable<Date>(Date())
     var updateAt: Observable<Date>? = Observable<Date>(Date())
     
     required init() {
-        
+        print("Class init:", self)
+    }
+    
+    deinit {
+        print("Class deinit:", self)
     }
 
 }

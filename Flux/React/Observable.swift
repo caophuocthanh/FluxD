@@ -32,9 +32,13 @@ class Observable<ElementType> {
     }
     
     func subscribe(_ event: @escaping EventHandler) {
-        Event<ElementType> {(value) in
+        Event<ElementType> { (value) in
             event(Observable<ElementType>(value))
             }.subscribe(self)
+    }
+    
+    deinit {
+        print("Observable deinit:", self)
     }
     
 }

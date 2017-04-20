@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
         print("ware.fetch:", a)
         
-        let newmodel: NewModel = a[0].model as! NewModel
+        let newmodel: NewModel = a[0].model?.value as! NewModel
         print(newmodel.self)
         
         print("before ac.model.id.reacts:", newmodel.name.events)
@@ -54,12 +54,12 @@ class ViewController: UIViewController {
         let atest: Observable<[String]> = Observable<[String]>([])        
         
         atest.subscribe { [weak self] in
-                print(self ?? ""," \n\n=======>>>>> react TEST A COUNT: ",$0.value.count, "\n")
+                print(self ?? "" ," \n\n=======>>>>> react TEST A COUNT: ",$0.value.count, "\n")
         }
         
 
         print("------START-----")
-        for i in 0..<1000 {
+        for i in 0..<10 {
             autoreleasepool {
                 atest.value.append("djfdjhkxhkdsjhfgsdfsdkjf" + "\(i)")
             }
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
             
             print("ware.fetch:", a)
             
-            let newmodel: NewModel = a[0].model as! NewModel
+            let newmodel: NewModel = a[0].model?.value as! NewModel
             print(newmodel.self)
             
             print("ac.model.id.value:", newmodel.name.value)

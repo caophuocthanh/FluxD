@@ -10,5 +10,5 @@ import UIKit
 
 /* Model */
 class Model: Class {
-
+    var id: Observable<String> = Observable<String>("undefined")
 }

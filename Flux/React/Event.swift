@@ -27,4 +27,8 @@ class Event<ElementType> {
         self._eventListener(elementType)
     }
     
+    deinit {
+        print("Event deinit:", self)
+    }
+    
 }
