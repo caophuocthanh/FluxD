@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		053345491EA87248006ABAD8 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453B1EA87248006ABAD8 /* Class.swift */; };
-		0533454A1EA87248006ABAD8 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453C1EA87248006ABAD8 /* Debounce.swift */; };
-		0533454B1EA87248006ABAD8 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453D1EA87248006ABAD8 /* Diff.swift */; };
-		0533454C1EA87248006ABAD8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453E1EA87248006ABAD8 /* Event.swift */; };
-		0533454D1EA87248006ABAD8 /* EventBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533453F1EA87248006ABAD8 /* EventBox.swift */; };
-		0533454E1EA87248006ABAD8 /* Fillter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345401EA87248006ABAD8 /* Fillter.swift */; };
-		0533454F1EA87248006ABAD8 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345411EA87248006ABAD8 /* Generate.swift */; };
-		053345501EA87248006ABAD8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345421EA87248006ABAD8 /* Map.swift */; };
 		053345511EA87248006ABAD8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345431EA87248006ABAD8 /* Observable.swift */; };
-		053345521EA87248006ABAD8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345441EA87248006ABAD8 /* Queue.swift */; };
 		053345531EA87248006ABAD8 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345461EA87248006ABAD8 /* Object.swift */; };
 		053345541EA87248006ABAD8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345471EA87248006ABAD8 /* Store.swift */; };
 		053345551EA87248006ABAD8 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345481EA87248006ABAD8 /* Pool.swift */; };
+		0533455D1EA928B4006ABAD8 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345571EA928B4006ABAD8 /* Debounce.swift */; };
+		0533455E1EA928B4006ABAD8 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345581EA928B4006ABAD8 /* Diff.swift */; };
+		0533455F1EA928B4006ABAD8 /* Fillter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345591EA928B4006ABAD8 /* Fillter.swift */; };
+		053345601EA928B4006ABAD8 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533455A1EA928B4006ABAD8 /* Generate.swift */; };
+		053345611EA928B4006ABAD8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533455B1EA928B4006ABAD8 /* Map.swift */; };
+		053345621EA928B4006ABAD8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533455C1EA928B4006ABAD8 /* Queue.swift */; };
+		053345681EA928BF006ABAD8 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345641EA928BF006ABAD8 /* Class.swift */; };
+		053345691EA928BF006ABAD8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345661EA928BF006ABAD8 /* Event.swift */; };
+		0533456A1EA928BF006ABAD8 /* EventBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345671EA928BF006ABAD8 /* EventBox.swift */; };
 		05659FA91D22BB3D008CB76D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05659FA81D22BB3D008CB76D /* Assets.xcassets */; };
 		05659FAC1D22BB3D008CB76D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05659FAA1D22BB3D008CB76D /* LaunchScreen.storyboard */; };
 		05E4E0981EA68F0E00A57345 /* NewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0971EA68F0E00A57345 /* NewModel.swift */; };
@@ -34,19 +34,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0533453B1EA87248006ABAD8 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
-		0533453C1EA87248006ABAD8 /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
-		0533453D1EA87248006ABAD8 /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
-		0533453E1EA87248006ABAD8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		0533453F1EA87248006ABAD8 /* EventBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBox.swift; sourceTree = "<group>"; };
-		053345401EA87248006ABAD8 /* Fillter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fillter.swift; sourceTree = "<group>"; };
-		053345411EA87248006ABAD8 /* Generate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generate.swift; sourceTree = "<group>"; };
-		053345421EA87248006ABAD8 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		053345431EA87248006ABAD8 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		053345441EA87248006ABAD8 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		053345461EA87248006ABAD8 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		053345471EA87248006ABAD8 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		053345481EA87248006ABAD8 /* Pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
+		053345571EA928B4006ABAD8 /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
+		053345581EA928B4006ABAD8 /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
+		053345591EA928B4006ABAD8 /* Fillter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fillter.swift; sourceTree = "<group>"; };
+		0533455A1EA928B4006ABAD8 /* Generate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generate.swift; sourceTree = "<group>"; };
+		0533455B1EA928B4006ABAD8 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		0533455C1EA928B4006ABAD8 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		053345641EA928BF006ABAD8 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		053345661EA928BF006ABAD8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		053345671EA928BF006ABAD8 /* EventBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBox.swift; sourceTree = "<group>"; };
 		05659F9E1D22BB3D008CB76D /* Flux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05659FA81D22BB3D008CB76D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05659FAB1D22BB3D008CB76D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +76,8 @@
 		053345381EA87248006ABAD8 /* FluxD */ = {
 			isa = PBXGroup;
 			children = (
+				053345631EA928BF006ABAD8 /* Class */,
+				053345651EA928BF006ABAD8 /* Event */,
 				053345391EA87248006ABAD8 /* Extentions */,
 				0533453A1EA87248006ABAD8 /* Observable */,
 				053345451EA87248006ABAD8 /* Store */,
@@ -86,6 +88,12 @@
 		053345391EA87248006ABAD8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				053345571EA928B4006ABAD8 /* Debounce.swift */,
+				053345581EA928B4006ABAD8 /* Diff.swift */,
+				053345591EA928B4006ABAD8 /* Fillter.swift */,
+				0533455A1EA928B4006ABAD8 /* Generate.swift */,
+				0533455B1EA928B4006ABAD8 /* Map.swift */,
+				0533455C1EA928B4006ABAD8 /* Queue.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -93,16 +101,7 @@
 		0533453A1EA87248006ABAD8 /* Observable */ = {
 			isa = PBXGroup;
 			children = (
-				0533453B1EA87248006ABAD8 /* Class.swift */,
-				0533453C1EA87248006ABAD8 /* Debounce.swift */,
-				0533453D1EA87248006ABAD8 /* Diff.swift */,
-				0533453E1EA87248006ABAD8 /* Event.swift */,
-				0533453F1EA87248006ABAD8 /* EventBox.swift */,
-				053345401EA87248006ABAD8 /* Fillter.swift */,
-				053345411EA87248006ABAD8 /* Generate.swift */,
-				053345421EA87248006ABAD8 /* Map.swift */,
 				053345431EA87248006ABAD8 /* Observable.swift */,
-				053345441EA87248006ABAD8 /* Queue.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -122,6 +121,23 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		053345631EA928BF006ABAD8 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				053345641EA928BF006ABAD8 /* Class.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		053345651EA928BF006ABAD8 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				053345661EA928BF006ABAD8 /* Event.swift */,
+				053345671EA928BF006ABAD8 /* EventBox.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		05659F951D22BB3D008CB76D = {
@@ -317,25 +333,25 @@
 				053345541EA87248006ABAD8 /* Store.swift in Sources */,
 				05E4E0A91EA69D2D00A57345 /* Service.swift in Sources */,
 				05E4E0AB1EA69D3E00A57345 /* View.swift in Sources */,
-				0533454D1EA87248006ABAD8 /* EventBox.swift in Sources */,
-				053345521EA87248006ABAD8 /* Queue.swift in Sources */,
-				0533454A1EA87248006ABAD8 /* Debounce.swift in Sources */,
+				053345621EA928B4006ABAD8 /* Queue.swift in Sources */,
 				053345511EA87248006ABAD8 /* Observable.swift in Sources */,
-				053345501EA87248006ABAD8 /* Map.swift in Sources */,
-				0533454F1EA87248006ABAD8 /* Generate.swift in Sources */,
 				05E4E09B1EA68F1700A57345 /* BViewController.swift in Sources */,
 				05E4E0A31EA69CDE00A57345 /* Templates.swift in Sources */,
-				0533454E1EA87248006ABAD8 /* Fillter.swift in Sources */,
+				053345601EA928B4006ABAD8 /* Generate.swift in Sources */,
+				053345681EA928BF006ABAD8 /* Class.swift in Sources */,
+				0533455E1EA928B4006ABAD8 /* Diff.swift in Sources */,
+				0533455D1EA928B4006ABAD8 /* Debounce.swift in Sources */,
 				05E4E0A71EA69D1100A57345 /* BaseModel.swift in Sources */,
 				053345551EA87248006ABAD8 /* Pool.swift in Sources */,
-				0533454B1EA87248006ABAD8 /* Diff.swift in Sources */,
+				0533455F1EA928B4006ABAD8 /* Fillter.swift in Sources */,
 				05E4E09C1EA68F1700A57345 /* ViewController.swift in Sources */,
 				05E4E0A51EA69CF100A57345 /* Config.swift in Sources */,
 				053345531EA87248006ABAD8 /* Object.swift in Sources */,
 				05E4E0981EA68F0E00A57345 /* NewModel.swift in Sources */,
-				053345491EA87248006ABAD8 /* Class.swift in Sources */,
+				0533456A1EA928BF006ABAD8 /* EventBox.swift in Sources */,
+				053345611EA928B4006ABAD8 /* Map.swift in Sources */,
+				053345691EA928BF006ABAD8 /* Event.swift in Sources */,
 				05E4E09E1EA68F4100A57345 /* AppDelegate.swift in Sources */,
-				0533454C1EA87248006ABAD8 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
