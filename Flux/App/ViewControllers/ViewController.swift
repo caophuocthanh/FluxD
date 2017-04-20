@@ -27,13 +27,13 @@ class ViewController: UIViewController {
         
         print("ware.fetch:", a)
         
-        if let newmodel: NewModel = a.objects.value.first as? NewModel {
-            print(newmodel.self)
+        if let newmodel = a.objects.value.first?.value as? NewModel {
             
+            print(newmodel.self)
             print("before ac.model.id.reacts:", newmodel.name.events)
             
             newmodel.name.subscribe { [weak self] in
-                print(self ?? ""," =======>>>>> react A: ",$1.value)
+                print("\n\n", self ?? ""," =======>>>>> react A: ",$0)
             }
             
             print("ac.model.id.value:", newmodel.name.value)
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
             print("------SET VALUE")
             newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
         }
+        
         
         /// /////////////////////////////////////////////////////////////
         
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
         let atest: Observable<[String]> = Observable<[String]>([])
         
         atest.subscribe { [weak self] in
-            print(self ?? "" ," \n\n=======>>>>> react TEST A COUNT: ",$1.value.count, "\n")
+            print(self ?? "" ," \n\n=======>>>>> react TEST A COUNT: ",$0.count, "\n")
         }
         
         
@@ -84,12 +85,10 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: delayTime0) {
             let ware =  Store.mainStore
             let a = ware.fetch("1").value
-            
-            
-            
+                        
             print("ware.fetch:", a)
             
-            if let newmodel: NewModel = a.objects.value.first as? NewModel {
+            if let newmodel = a.objects.value.first?.value as? NewModel {
                 print(newmodel.self)
                 
                 print("ac.model.id.value:", newmodel.name.value)
@@ -97,7 +96,7 @@ class ViewController: UIViewController {
                 
                 
                 print("------SET VALUE")
-                newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDA"
+                newmodel.name.value = "SET ID :YAFHJDGFJAHDGFAJDHGFDAzxczxczxczxczxczxczxccsakhgfkjhsadgfkjhasd"
             }
         }
     }

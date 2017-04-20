@@ -37,11 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("WAREHOUSE: ", warehouse.rawValue)
         
-        warehouse.subscribe("1") { (old, new) in
+        warehouse.subscribe("1") { (new) in
             print("subscribe UPDATE STORE 1:", new)
         }
         
-        warehouse.subscribe("11") { (old, new) in
+        warehouse.subscribe("11") { (new) in
             print("subscribe UPDATE STORE 11:", new)
         }
         
@@ -85,14 +85,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("warehouse 11", warehouse.fetch("11"))
         
-        a1.name.subscribe { (old, new) in
-            print("A1 CHHANGE:", new.value)
+        a1.name.subscribe { (value) in
+            print("A1 CHHANGE:", value)
         }
         
         let aa = warehouse.fetch("11").value.filter("a1", type: NewModel.self)
         
-        aa?.name.subscribe { (old, new) in
-            print("\n\nAA CHHANGE:", new.value)
+        aa?.name.subscribe { (value) in
+            print("\n\nAA CHHANGE:", value)
         }
 
     }

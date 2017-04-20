@@ -38,7 +38,7 @@ class Pool {
     /*
      * subscribe
      */
-    typealias ModelsHandler = (Observable<[Observable<Object>]>, Observable<[Observable<Object>]>) -> ()
+    typealias ModelsHandler = ([Observable<Object>]) -> ()
     
     func subscribe(_ modelsHandler: @escaping ModelsHandler) {
         self.objects.subscribe(modelsHandler)
@@ -49,7 +49,7 @@ class Pool {
      */
     
     func append(_ object: Object) {
-        self.objects.value.append(Observable<Object>(object))
+        return self.objects.value.append(Observable<Object>(object))
     }
     
     /*
@@ -77,7 +77,7 @@ class Pool {
     func update(_ object: Object) {
         for observableObject in self.objects.value {
             if observableObject.value.id.value == object.id.value,  type(of: observableObject.value) === type(of: object) {
-                observableObject.value = object
+                return observableObject.value = object
             }
         }
     }

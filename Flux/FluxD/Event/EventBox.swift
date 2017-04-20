@@ -19,7 +19,7 @@ class EventBox<ElementEventType> {
         self.event = event
     }
     
-//    deinit {
-//        print("EventBox deinit:", self)
-//    }
+    deinit {
+        print("EventBox deinit:", self)
+    }
 }

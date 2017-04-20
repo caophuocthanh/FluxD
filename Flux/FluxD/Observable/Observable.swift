@@ -11,16 +11,20 @@ import Foundation
 /* Dynamic */
 class Observable<ElementType> {
     
-    typealias EventHandler = (Observable<ElementType>, Observable<ElementType>) -> ()
+    typealias EventHandler = (ElementType) -> ()
     
     var value: ElementType {
         didSet {
-            for (index, eventBox) in self.events.enumerated() {
-                guard let event = eventBox.event else {
-                    self.events.remove(at: index)
-                    return
+            DispatchQueue.global(qos: .background).async {
+                for (index, eventBox) in self.events.enumerated() {
+                    guard let event = eventBox.event else {
+                        self.events.remove(at: index)
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        event.onChange(self.value)
+                    }
                 }
-                event.onChange(oldValue, value)
             }
         }
     }
@@ -32,13 +36,13 @@ class Observable<ElementType> {
     }
     
     func subscribe(_ event: @escaping EventHandler) {
-        Event<ElementType> { (oldObservable, newObservable) in
-            event(Observable<ElementType>(oldObservable) ,Observable<ElementType>(newObservable))
+        Event<ElementType> { (observable) in
+            event(observable)
             }.on(self)
     }
     
-//    deinit {
-//        print("Observable deinit:", self)
-//    }
+    deinit {
+        print("Observable deinit:", self)
+    }
     
 }

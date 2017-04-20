@@ -54,9 +54,9 @@ class Store {
         self.update(object)
         let observablePool = self.observablePool(poolIdentifier)
         if observablePool.value.array.contains(where: { (observableObject) -> Bool in
-            observableObject.value.id.value == object.id.value && type(of: observableObject.value) == type(of: object)
+            return observableObject.value.id.value == object.id.value && type(of: observableObject.value) == type(of: object)
         }) == false {
-            observablePool.value.append(object)
+            return observablePool.value.append(object)
         }
     }
     
@@ -67,7 +67,7 @@ class Store {
         for observablePool in self._observableStore.value {
             for (index, observableObject) in observablePool.value.array.enumerated() {
                 if observableObject.value.id.value == object.id.value && type(of: observableObject) === type(of: object) {
-                    observablePool.value.array[index].value = object
+                    return observablePool.value.array[index].value = object
                 }
             }
         }
@@ -101,20 +101,16 @@ class Store {
     /*
      * subscribe
      */
-    typealias EventPoolHandler = (Observable<Pool>, Observable<Pool>) -> ()
+    typealias EventPoolHandler = ([Observable<Object>]) -> ()
     func subscribe(_ poolIdentifier: String,_ eventPoolHandler: @escaping EventPoolHandler) {
         for observablePool in self._observableStore.value {
             if observablePool.value.identifer == poolIdentifier {
-                observablePool.value.subscribe({ (_, _) in
-                    eventPoolHandler(observablePool, observablePool)
-                })
+                return observablePool.value.subscribe(eventPoolHandler)
             }
         }
         let observablePool = Observable<Pool>(Pool(poolIdentifier))
         self._observableStore.value.append(observablePool)
-        return observablePool.value.subscribe({ (_, _) in
-            eventPoolHandler(observablePool, observablePool)
-        })
+        return observablePool.value.subscribe(eventPoolHandler)
     }
     
     /*

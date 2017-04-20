@@ -10,7 +10,6 @@ import UIKit
 
 class BViewController: UIViewController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\n\n----------------BViewController viewDidLoad-------------------\n")
@@ -24,15 +23,16 @@ class BViewController: UIViewController {
         
         print("ware.fetch:", a)
         
-        if let newmodel = a.objects.value.first as? NewModel {
+         if let newmodel = a.objects.value.first?.value as? NewModel {
             
             print(newmodel.self)
             print("before ac.model.id.reacts:", newmodel.name.events)
             
-            newmodel.name.subscribe { [weak self] in
-                print(self ?? ""," =======>>>>> react B: ",$1.value)
+            newmodel.name.subscribe { (value) in
+                print("\n\n", "BUG NILL CONTROLLER", " =======>>>>> react B: ", value)
+                print("\n\n", "BUG NILL CONTROLLER", " =======>>>>> react B events: ", newmodel.name.events)
             }
-            
+
             print("ac.model.id.value:", newmodel.name.value)
             print("ac.model.id.reacts:", newmodel.name.events)
             
