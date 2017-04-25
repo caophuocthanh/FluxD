@@ -6,8 +6,10 @@
 //  Copyright © 2017 Cao Phuoc Thanh. All rights reserved.
 //
 
-import UIKit
+import Dispatch
+import Foundation
 
-class Queue {
-    //TODO: Queue
+
+public struct Queue {
+    
 }

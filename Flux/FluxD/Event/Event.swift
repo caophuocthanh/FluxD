@@ -19,11 +19,11 @@ class Event<ElementType> {
         self._eventListener = eventListener
     }
     
-    func on(_ observable: Observable<ElementType>){
-        observable.events.append(EventBox(self))
+    func push(_ observable: Observable<ElementType>,_ dispose: AnyObject) {
+        observable.events.append(EventBox(self, dispose))
     }
     
-    func onChange(_ element: ElementType) {
+    func fire(_ element: ElementType) {
         return self._eventListener(element)
     }
     

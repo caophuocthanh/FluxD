@@ -12,11 +12,13 @@ import UIKit
 class EventBox<ElementEventType> {
     
     // TODO: What ?????
-    //weak var event: Event<ElementEventType>?
+    // weak var event: Event<ElementEventType>?
     var event: Event<ElementEventType>?
+    weak var dispose: AnyObject?
     
-    init(_ event: Event<ElementEventType>) {
+    init(_ event: Event<ElementEventType>,_ dispose: AnyObject) {
         self.event = event
+        self.dispose = dispose
     }
     
     deinit {

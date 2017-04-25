@@ -27,11 +27,10 @@ class BViewController: UIViewController {
             
             print(newmodel.self)
             print("before ac.model.id.reacts:", newmodel.name.events)
-            
-            newmodel.name.subscribe { (value) in
-                print("\n\n", "BUG NILL CONTROLLER", " =======>>>>> react B: ", value)
-                print("\n\n", "BUG NILL CONTROLLER", " =======>>>>> react B events: ", newmodel.name.events)
-            }
+
+            newmodel.name.subscribe ({ [unowned self] (value) in
+                print("\n\n (\(self)) =======>>>>> react B: ", value)
+            } , disposeIn: self)
 
             print("ac.model.id.value:", newmodel.name.value)
             print("ac.model.id.reacts:", newmodel.name.events)

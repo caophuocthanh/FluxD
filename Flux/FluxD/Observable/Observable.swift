@@ -15,16 +15,18 @@ class Observable<ElementType> {
     
     var value: ElementType {
         didSet {
-            DispatchQueue.global(qos: .background).async {
-                for (index, eventBox) in self.events.enumerated() {
-                    guard let event = eventBox.event else {
-                        self.events.remove(at: index)
-                        return
-                    }
-                    DispatchQueue.main.async {
-                        event.onChange(self.value)
-                    }
+            for (index, eventBox) in self.events.enumerated() {
+                print("eventBox.event:", eventBox.event ?? "nil")
+                guard let event = eventBox.event else {
+                    self.events.remove(at: index)
+                    return
                 }
+                guard let _ = eventBox.dispose else {
+                    print("remove event with target was deinit...")
+                    self.events.remove(at: index)
+                    return
+                }
+                event.fire(self.value)
             }
         }
     }
@@ -35,10 +37,10 @@ class Observable<ElementType> {
         self.value = value
     }
     
-    func subscribe(_ event: @escaping EventHandler) {
+    func subscribe(_ event: @escaping EventHandler, disposeIn dispose: AnyObject) {
         Event<ElementType> { (observable) in
             event(observable)
-            }.on(self)
+            }.push(self, dispose)
     }
     
     deinit {

@@ -102,15 +102,15 @@ class Store {
      * subscribe
      */
     typealias EventPoolHandler = ([Observable<Object>]) -> ()
-    func subscribe(_ poolIdentifier: String,_ eventPoolHandler: @escaping EventPoolHandler) {
+    func subscribe(_ poolIdentifier: String,_ eventPoolHandler: @escaping EventPoolHandler, disposeIn dispose: AnyObject) {
         for observablePool in self._observableStore.value {
             if observablePool.value.identifer == poolIdentifier {
-                return observablePool.value.subscribe(eventPoolHandler)
+                return observablePool.value.subscribe(eventPoolHandler, disposeIn: dispose)
             }
         }
         let observablePool = Observable<Pool>(Pool(poolIdentifier))
         self._observableStore.value.append(observablePool)
-        return observablePool.value.subscribe(eventPoolHandler)
+        return observablePool.value.subscribe(eventPoolHandler, disposeIn: dispose)
     }
     
     /*
