@@ -32,9 +32,9 @@ class ViewController: UIViewController {
             print(newmodel.self)
             print("before ac.model.id.reacts:", newmodel.name.events)
             
-            newmodel.name.subscribe ({ [weak self] in
+            newmodel.name.subscribe(self) { [weak self] in
                 print("\n\n", self ?? ""," =======>>>>> react A: ",$0)
-            }, disposeIn: self)
+            }
             
             print("ac.model.id.value:", newmodel.name.value)
             print("ac.model.id.reacts:", newmodel.name.events)
@@ -55,9 +55,9 @@ class ViewController: UIViewController {
         
         let atest: Observable<[String]> = Observable<[String]>([])
         
-        atest.subscribe ({ [unowned self] in
+        atest.subscribe(self) { [unowned self] in
             print(self ," \n\n=======>>>>> react TEST A COUNT: ",$0.count, "\n")
-        }, disposeIn: self)
+        }
         
         
         print("------START-----")

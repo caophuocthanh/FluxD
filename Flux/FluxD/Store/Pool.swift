@@ -40,8 +40,8 @@ class Pool {
      */
     typealias ModelsHandler = ([Observable<Object>]) -> ()
     
-    func subscribe(_ modelsHandler: @escaping ModelsHandler, disposeIn dispose: AnyObject) {
-        self.objects.subscribe(modelsHandler, disposeIn: self)
+    func subscribe(_ dispose: AnyObject, _ modelsHandler: @escaping ModelsHandler) {
+        self.objects.subscribe(dispose, modelsHandler)
     }
     
     /*

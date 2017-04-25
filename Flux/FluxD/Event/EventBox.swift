@@ -11,8 +11,6 @@ import UIKit
 /* ReactBox */
 class EventBox<ElementEventType> {
     
-    // TODO: What ?????
-    // weak var event: Event<ElementEventType>?
     var event: Event<ElementEventType>?
     weak var dispose: AnyObject?
     

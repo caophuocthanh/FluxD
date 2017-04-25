@@ -28,9 +28,9 @@ class BViewController: UIViewController {
             print(newmodel.self)
             print("before ac.model.id.reacts:", newmodel.name.events)
 
-            newmodel.name.subscribe ({ [unowned self] (value) in
+            newmodel.name.subscribe (self) { [unowned self] (value) in
                 print("\n\n (\(self)) =======>>>>> react B: ", value)
-            } , disposeIn: self)
+            }
 
             print("ac.model.id.value:", newmodel.name.value)
             print("ac.model.id.reacts:", newmodel.name.events)

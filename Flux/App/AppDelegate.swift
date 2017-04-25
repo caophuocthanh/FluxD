@@ -37,13 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("WAREHOUSE: ", warehouse.rawValue)
         
-        warehouse.subscribe("1", { [unowned self] (new) in
+        warehouse.subscribe(self, poolId: "1") { [unowned self] (new) in
             print(self, ": subscribe UPDATE STORE 1:", new)
-        }, disposeIn: self)
+        }
         
-        warehouse.subscribe("11", { [unowned self] (new) in
+        warehouse.subscribe(self, poolId: "11") { [unowned self] (new) in
             print(self, ": subscribe UPDATE STORE 11:", new)
-        }, disposeIn: self)
+        }
         
         
         let a1 = NewModel(id: "a1", createAt: nil, name: "a1")
@@ -85,15 +85,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("warehouse 11", warehouse.fetch("11"))
         
-        a1.name.subscribe({ [unowned self] (value) in
+        a1.name.subscribe(self) { [unowned self] (value) in
             print(self, ": A1 CHHANGE:", value)
-        }, disposeIn: self)
+        }
         
         let aa = warehouse.fetch("11").value.filter("a1", type: NewModel.self)
         
-        aa?.name.subscribe ({ [unowned self] (value) in
+        aa?.name.subscribe(self) { [unowned self] (value) in
             print(self,": \n\nAA CHHANGE:", value)
-        }, disposeIn: self)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

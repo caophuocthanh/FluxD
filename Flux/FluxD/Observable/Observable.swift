@@ -37,7 +37,7 @@ class Observable<ElementType> {
         self.value = value
     }
     
-    func subscribe(_ event: @escaping EventHandler, disposeIn dispose: AnyObject) {
+    func subscribe(_ dispose: AnyObject, _ event: @escaping EventHandler) {
         Event<ElementType> { (observable) in
             event(observable)
             }.push(self, dispose)
