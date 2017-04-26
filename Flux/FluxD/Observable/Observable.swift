@@ -15,18 +15,22 @@ class Observable<ElementType> {
     
     var value: ElementType {
         didSet {
-            for (index, eventBox) in self.events.enumerated() {
-                print("eventBox.event:", eventBox.event ?? "nil")
-                guard let event = eventBox.event else {
-                    self.events.remove(at: index)
-                    return
+            Queue.global {
+                for (index, eventBox) in self.events.enumerated() {
+                    print("eventBox.event:", eventBox.event ?? "nil")
+                    guard let event = eventBox.event else {
+                        self.events.remove(at: index)
+                        return
+                    }
+                    guard let _ = eventBox.dispose else {
+                        print("remove event with target was deinit...")
+                        self.events.remove(at: index)
+                        return
+                    }
+                    Queue.main {
+                        event.fire(self.value)
+                    }
                 }
-                guard let _ = eventBox.dispose else {
-                    print("remove event with target was deinit...")
-                    self.events.remove(at: index)
-                    return
-                }
-                event.fire(self.value)
             }
         }
     }
@@ -37,10 +41,30 @@ class Observable<ElementType> {
         self.value = value
     }
     
+    func release(_ dispose: AnyObject, completion:@escaping (() -> ())) {
+        Queue.global {
+            for (index, eventBox) in self.events.enumerated() {
+                guard let _dispose = eventBox.dispose else {
+                    print("remove event with target was deinit...")
+                    self.events.remove(at: index)
+                    return
+                }
+                if _dispose === dispose {
+                    self.events.remove(at: index)
+                }
+            }
+            Queue.main {
+                completion()
+            }
+        }
+    }
+    
     func subscribe(_ dispose: AnyObject, _ event: @escaping EventHandler) {
-        Event<ElementType> { (observable) in
-            event(observable)
-            }.push(self, dispose)
+        self.release(dispose) {
+            Event<ElementType> { (observable) in
+                event(observable)
+                }.push(self, dispose)
+        }
     }
     
     deinit {

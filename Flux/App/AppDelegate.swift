@@ -33,15 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("\n\n----------------AppDelegate setup-------------------\n")
         
-        let warehouse =  Store.mainStore
+        let warehouse =  Store.main
         
         print("WAREHOUSE: ", warehouse.rawValue)
         
         warehouse.subscribe(self, poolId: "1") { [unowned self] (new) in
-            print(self, ": subscribe UPDATE STORE 1:", new)
-        }
-        
-        warehouse.subscribe(self, poolId: "11") { [unowned self] (new) in
             print(self, ": subscribe UPDATE STORE 11:", new)
         }
         
@@ -56,44 +52,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let a31 = NewModel(id: "a31", createAt: nil, name: "a31")
         let a41 = NewModel(id: "a41", createAt: nil, name: "a41")
         
-        warehouse.append(a1, poolIdentifier: "1")
-        warehouse.append(a2, poolIdentifier: "1")
-        warehouse.append(a3, poolIdentifier: "1")
-        warehouse.append(a4, poolIdentifier: "1")
+        warehouse.add(a1, poolIdentifier: "1")
+        warehouse.add(a2, poolIdentifier: "1")
+        warehouse.add(a3, poolIdentifier: "1")
+        warehouse.add(a4, poolIdentifier: "1")
         
-        warehouse.append(a11, poolIdentifier: "1")
-        warehouse.append(a21, poolIdentifier: "1")
-        warehouse.append(a31, poolIdentifier: "1")
-        warehouse.append(a41, poolIdentifier: "1")
+        warehouse.add(a11, poolIdentifier: "1")
+        warehouse.add(a21, poolIdentifier: "1")
+        warehouse.add(a31, poolIdentifier: "1")
+        warehouse.add(a41, poolIdentifier: "1")
         
         
         
-        warehouse.append(a1, poolIdentifier: "11")
-        warehouse.append(a2, poolIdentifier: "11")
-        warehouse.append(a3, poolIdentifier: "11")
-        warehouse.append(a4, poolIdentifier: "11")
-        warehouse.append(a11, poolIdentifier: "11")
-        warehouse.append(a21, poolIdentifier: "11")
-        warehouse.append(a31, poolIdentifier: "11")
-        warehouse.append(a41, poolIdentifier: "11")
+        warehouse.add(a1, poolIdentifier: "11")
+        warehouse.add(a2, poolIdentifier: "11")
+        warehouse.add(a3, poolIdentifier: "11")
+        warehouse.add(a4, poolIdentifier: "11")
+        warehouse.add(a11, poolIdentifier: "11")
+        warehouse.add(a21, poolIdentifier: "11")
+        warehouse.add(a31, poolIdentifier: "11")
+        warehouse.add(a41, poolIdentifier: "11")
         
         print("\n\nwarehouse.store: ", warehouse.observableStore)
         
         print("\n\n\nwarehouse.rawValue: ", warehouse.rawValue)
         
-        print("warehouse 1", warehouse.fetch("1"))
-        
-        print("warehouse 11", warehouse.fetch("11"))
         
         a1.name.subscribe(self) { [unowned self] (value) in
             print(self, ": A1 CHHANGE:", value)
         }
         
-        let aa = warehouse.fetch("11").value.filter("a1", type: NewModel.self)
-        
-        aa?.name.subscribe(self) { [unowned self] (value) in
-            print(self,": \n\nAA CHHANGE:", value)
-        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -64,9 +64,11 @@ class Pool {
      * remove by id and type
      */
     func remove(_ id: String, type: AnyClass) {
-        for (index, observableObject) in self.objects.value.enumerated() {
-            if observableObject.value.id.value == id,  type(of: observableObject.value) === type {
-                self.objects.value.remove(at: index)
+        Queue.global {
+            for (index, observableObject) in self.objects.value.enumerated() {
+                if observableObject.value.id.value == id,  type(of: observableObject.value) === type {
+                    self.objects.value.remove(at: index)
+                }
             }
         }
     }
@@ -75,9 +77,11 @@ class Pool {
      * update
      */
     func update(_ object: Object) {
-        for observableObject in self.objects.value {
-            if observableObject.value.id.value == object.id.value,  type(of: observableObject.value) === type(of: object) {
-                return observableObject.value = object
+        Queue.global {
+            for observableObject in self.objects.value {
+                if observableObject.value.id.value == object.id.value,  type(of: observableObject.value) === type(of: object) {
+                    return observableObject.value = object
+                }
             }
         }
     }
@@ -85,13 +89,19 @@ class Pool {
     /*
      * filter
      */
-    func filter<T: Object>(_ id: String, type: T.Type) -> T? {
-        for observableObject in self.objects.value {
-            if observableObject.value.id.value == id && type(of: observableObject.value) === type {
-                return observableObject as? T
+    func find<T: Object>(_ id: String, type: T.Type, completion: @escaping ((T?) -> ())) {
+        Queue.global {
+            for observableObject in self.objects.value {
+                if observableObject.value.id.value == id && type(of: observableObject.value) === type {
+                    Queue.main {
+                        return completion(observableObject as? T)
+                    }
+                }
+            }
+            Queue.main {
+                return completion(nil)
             }
         }
-        return nil
     }
     
 }

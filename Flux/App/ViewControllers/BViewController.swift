@@ -18,12 +18,16 @@ class BViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        let ware =  Store.mainStore
-        let a = ware.fetch("1").value
+        let ware =  Store.main
+        var a: Pool?
         
-        print("ware.fetch:", a)
+        ware.fetch("1") { (pool) in
+            a = pool.value
+        }
         
-         if let newmodel = a.objects.value.first?.value as? NewModel {
+        print("ware.fetch:", a ?? "nil")
+        
+         if let newmodel = a?.objects.value.first?.value as? NewModel {
             
             print(newmodel.self)
             print("before ac.model.id.reacts:", newmodel.name.events)

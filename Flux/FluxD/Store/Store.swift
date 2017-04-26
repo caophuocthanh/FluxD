@@ -36,7 +36,7 @@ class Store {
     /*
      * observable pool
      */
-    func observablePool(_ poolIdentifier: String) -> Observable<Pool> {
+    func pool(_ poolIdentifier: String) -> Observable<Pool> {
         for observablePool in self._observableStore.value {
             if observablePool.value.identifer == poolIdentifier {
                 return observablePool
@@ -50,13 +50,23 @@ class Store {
     /*
      * append
      */
-    func append(_ object: Object, poolIdentifier: String) {
-        self.update(object)
-        let observablePool = self.observablePool(poolIdentifier)
-        if observablePool.value.array.contains(where: { (observableObject) -> Bool in
-            return observableObject.value.id.value == object.id.value && type(of: observableObject.value) == type(of: object)
-        }) == false {
-            return observablePool.value.append(object)
+    func add(_ object: Object, poolIdentifier: String) {
+        Queue.global {
+            self.update(object)
+            let observablePool = self.pool(poolIdentifier)
+            if observablePool.value.array.contains(where: { (observableObject) -> Bool in
+                return observableObject.value.id.value == object.id.value && type(of: observableObject.value) == type(of: object)
+            }) == false {
+                return observablePool.value.append(object)
+            }
+        }
+    }
+    
+    func append(_ objects: [Object], poolIdentifier: String) {
+        Queue.global {
+            for object in objects {
+                self.add(object, poolIdentifier: poolIdentifier)
+            }
         }
     }
     
@@ -77,16 +87,15 @@ class Store {
      * remove
      */
     func remove(_ object: Object, poolIdentifier: String) {
-        for (index, observablePool) in self.rawValue.enumerated() {
-            if observablePool.value.identifer == poolIdentifier {
-                self._observableStore.value.remove(at: index)
+        Queue.global {
+            for (index, observablePool) in self.rawValue.enumerated() {
+                if observablePool.value.identifer == poolIdentifier {
+                    self._observableStore.value.remove(at: index)
+                }
             }
         }
     }
     
-    /*
-     * fetch
-     */
     func fetch(_ poolIdentifier: String) -> Observable<Pool> {
         for observablePool in self._observableStore.value {
             if observablePool.value.identifer == poolIdentifier {
@@ -99,24 +108,72 @@ class Store {
     }
     
     /*
+     * fetch
+     */
+    func fetch(_ poolIdentifier: String,_ completion: @escaping (Observable<Pool>) -> ()) {
+        Queue.global {
+            for observablePool in self._observableStore.value {
+                if observablePool.value.identifer == poolIdentifier {
+                    Queue.main {
+                        return completion(observablePool)
+                    }
+                }
+            }
+        }
+    }
+    
+    /*
      * subscribe
      */
     typealias EventPoolHandler = ([Observable<Object>]) -> ()
+    
     func subscribe(_ dispose: AnyObject, poolId id: String,_ eventPoolHandler: @escaping EventPoolHandler) {
-        for observablePool in self._observableStore.value {
-            if observablePool.value.identifer == id {
-                return observablePool.value.subscribe(dispose,eventPoolHandler)
+        Queue.global {
+            for observablePool in self._observableStore.value {
+                if observablePool.value.identifer == id {
+                    Queue.main {
+                        return observablePool.value.subscribe(dispose,eventPoolHandler)
+                    }
+                }
             }
         }
+    }
+    
+    func newPool(identifier id: String) {
         let observablePool = Observable<Pool>(Pool(id))
         self._observableStore.value.append(observablePool)
-        return observablePool.value.subscribe(dispose, eventPoolHandler)
     }
+    
+    
+    private var _eventPoolHandler: EventPoolHandler?
+    
+    func subscrible(_ delay: Double, dispose: AnyObject, poolId: String, _ eventPoolHandler: @escaping EventPoolHandler) {
+        
+        self._eventPoolHandler = { (observer) in
+            Queue.main {
+                eventPoolHandler(observer)
+            }
+        }
+        
+        var count = 0
+        self.subscribe(dispose, poolId: poolId) { [weak self] (observer) in
+            count += 1
+            Queue.delay(delay) {
+                count -= 1
+                if count == 0 {
+                    Queue.main {
+                        self?._eventPoolHandler?(observer)
+                    }
+                }
+            }
+        }
+    }
+    
     
     /*
      * main store
      */
-    static var mainStore: Store = {
+    static var main: Store = {
         let temp_store = Store()
         return temp_store
     }()
