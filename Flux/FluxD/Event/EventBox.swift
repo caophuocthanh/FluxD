@@ -20,6 +20,6 @@ class EventBox<ElementEventType> {
     }
     
     deinit {
-        print("EventBox deinit:", self)
+        //print("EventBox deinit:", self)
     }
 }

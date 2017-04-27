@@ -15,7 +15,6 @@
 		0533455E1EA928B4006ABAD8 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345581EA928B4006ABAD8 /* Diff.swift */; };
 		0533455F1EA928B4006ABAD8 /* Fillter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345591EA928B4006ABAD8 /* Fillter.swift */; };
 		053345601EA928B4006ABAD8 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533455A1EA928B4006ABAD8 /* Generate.swift */; };
-		053345611EA928B4006ABAD8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533455B1EA928B4006ABAD8 /* Map.swift */; };
 		053345621EA928B4006ABAD8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533455C1EA928B4006ABAD8 /* Queue.swift */; };
 		053345681EA928BF006ABAD8 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345641EA928BF006ABAD8 /* Class.swift */; };
 		053345691EA928BF006ABAD8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053345661EA928BF006ABAD8 /* Event.swift */; };
@@ -31,6 +30,8 @@
 		05E4E0A71EA69D1100A57345 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0A61EA69D1100A57345 /* BaseModel.swift */; };
 		05E4E0A91EA69D2D00A57345 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0A81EA69D2D00A57345 /* Service.swift */; };
 		05E4E0AB1EA69D3E00A57345 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E0AA1EA69D3E00A57345 /* View.swift */; };
+		05E82B791EB262C600EE0333 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E82B781EB262C600EE0333 /* SwiftyJSON.swift */; };
+		05E82B7B1EB2643100EE0333 /* SubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E82B7A1EB2643100EE0333 /* SubModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,6 @@
 		053345581EA928B4006ABAD8 /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
 		053345591EA928B4006ABAD8 /* Fillter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fillter.swift; sourceTree = "<group>"; };
 		0533455A1EA928B4006ABAD8 /* Generate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generate.swift; sourceTree = "<group>"; };
-		0533455B1EA928B4006ABAD8 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		0533455C1EA928B4006ABAD8 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		053345641EA928BF006ABAD8 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		053345661EA928BF006ABAD8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		05E4E0A61EA69D1100A57345 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		05E4E0A81EA69D2D00A57345 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		05E4E0AA1EA69D3E00A57345 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		05E82B781EB262C600EE0333 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		05E82B7A1EB2643100EE0333 /* SubModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,6 @@
 				053345581EA928B4006ABAD8 /* Diff.swift */,
 				053345591EA928B4006ABAD8 /* Fillter.swift */,
 				0533455A1EA928B4006ABAD8 /* Generate.swift */,
-				0533455B1EA928B4006ABAD8 /* Map.swift */,
 				0533455C1EA928B4006ABAD8 /* Queue.swift */,
 			);
 			path = Extentions;
@@ -109,6 +110,7 @@
 		053345451EA87248006ABAD8 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				05E82B781EB262C600EE0333 /* SwiftyJSON.swift */,
 				053345461EA87248006ABAD8 /* Object.swift */,
 				053345471EA87248006ABAD8 /* Store.swift */,
 				053345481EA87248006ABAD8 /* Pool.swift */,
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				05E4E0971EA68F0E00A57345 /* NewModel.swift */,
+				05E82B7A1EB2643100EE0333 /* SubModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				05E4E09B1EA68F1700A57345 /* BViewController.swift in Sources */,
 				05E4E0A31EA69CDE00A57345 /* Templates.swift in Sources */,
 				053345601EA928B4006ABAD8 /* Generate.swift in Sources */,
+				05E82B791EB262C600EE0333 /* SwiftyJSON.swift in Sources */,
 				053345681EA928BF006ABAD8 /* Class.swift in Sources */,
 				0533455E1EA928B4006ABAD8 /* Diff.swift in Sources */,
 				0533455D1EA928B4006ABAD8 /* Debounce.swift in Sources */,
@@ -349,9 +353,9 @@
 				053345531EA87248006ABAD8 /* Object.swift in Sources */,
 				05E4E0981EA68F0E00A57345 /* NewModel.swift in Sources */,
 				0533456A1EA928BF006ABAD8 /* EventBox.swift in Sources */,
-				053345611EA928B4006ABAD8 /* Map.swift in Sources */,
 				053345691EA928BF006ABAD8 /* Event.swift in Sources */,
 				05E4E09E1EA68F4100A57345 /* AppDelegate.swift in Sources */,
+				05E82B7B1EB2643100EE0333 /* SubModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

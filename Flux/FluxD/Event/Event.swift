@@ -28,7 +28,7 @@ class Event<ElementType> {
     }
     
     deinit {
-        print("Event deinit:", self)
+        //print("Event deinit:", self)
     }
     
 }

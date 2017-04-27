@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        Queue.delay(20) {
+        Queue.delay(10) {
             Store.main.fetch("1") { (pool) in
                 print("LSKJFGLJSHGLFJHSGFLJHSFJHSFGLSFJH:", pool.value.objects.value)
                 self.data = pool.value.objects.value
@@ -89,11 +89,11 @@ class ViewController: UIViewController {
         
         
 
-        Queue.delay(10) {
+        Queue.delay(15) {
             Queue.global {
                 for i in 0..<100 {
-                    let a1 = NewModel(id: "NewModel_" + String(i), createAt: nil, name: "Name_" + String(i))
-                    Store.main.add(a1, poolIdentifier: "1")
+                    let a1 = NewModel(["id" : i , "name": "thanh \(i)", "sub": ["id" : i , "name": "thanh\(i)"]])
+                    Store.main.add(a1, poolId: "1")
                 }
             }
         }
@@ -119,7 +119,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "aa", for: indexPath)
         if let observerModel = (self.data[indexPath.row].value as? NewModel) {
             cell.textLabel?.text = observerModel.name.value
-            observerModel.name.subscribe(self, { (newValue) in
+            observerModel.sub.value.name.subscribe(self, { (newValue) in
                 print("observerModel.name changed:", newValue)
                 cell.textLabel?.text = newValue
             })

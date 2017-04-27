@@ -63,7 +63,7 @@ class Pool {
     /*
      * remove by id and type
      */
-    func remove(_ id: String, type: AnyClass) {
+    func remove(_ id: Int, type: AnyClass) {
         Queue.global {
             for (index, observableObject) in self.objects.value.enumerated() {
                 if observableObject.value.id.value == id,  type(of: observableObject.value) === type {
@@ -89,7 +89,7 @@ class Pool {
     /*
      * filter
      */
-    func find<T: Object>(_ id: String, type: T.Type, completion: @escaping ((T?) -> ())) {
+    func find<T: Object>(_ id: Int, type: T.Type, completion: @escaping ((T?) -> ())) {
         Queue.global {
             for observableObject in self.objects.value {
                 if observableObject.value.id.value == id && type(of: observableObject.value) === type {

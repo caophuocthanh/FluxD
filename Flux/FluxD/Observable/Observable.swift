@@ -17,7 +17,7 @@ class Observable<ElementType> {
         didSet {
             Queue.global {
                 for (index, eventBox) in self.events.enumerated() {
-                    print("eventBox.event:", eventBox.event ?? "nil")
+                    //print("eventBox.event:", eventBox.event ?? "nil")
                     guard let event = eventBox.event else {
                         self.events.remove(at: index)
                         return
@@ -68,7 +68,7 @@ class Observable<ElementType> {
     }
     
     deinit {
-        print("Observable deinit:", self)
+        //print("Observable deinit:", self)
     }
     
 }

@@ -10,18 +10,17 @@ import UIKit
 
 class NewModel: Object {
     
-    var name = Observable<String>("")
+    var name: Observable<String>!
+    var sub: Observable<SubModel>!
     
-    required init(id: String, createAt: Date?, name: String) {
-        super.init()
-        self.id.value = id
-        if let _create_at = createAt {
-            self.createdAt?.value = _create_at
+    override init(_ any: Any) {
+        super.init(any)
+        if let idName = JSON(any)["name"].string {
+            self.name = Observable<String>(idName)
         }
-        self.name.value = name
+        if let sub = JSON(any)["sub"].dictionaryObject {
+            self.sub = Observable<SubModel>(SubModel(sub))
+        }
     }
     
-    required init() {
-        super.init()
-    }
 }

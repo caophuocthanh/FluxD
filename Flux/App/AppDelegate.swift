@@ -42,43 +42,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-        let a1 = NewModel(id: "a1", createAt: nil, name: "a1")
-        let a2 = NewModel(id: "a2", createAt: nil, name: "a2")
-        let a3 = NewModel(id: "a3", createAt: nil, name: "a3")
-        let a4 = NewModel(id: "a4", createAt: nil, name: "a4")
+        let a1 = NewModel(["id" : 1 , "name": "thanh1AAAA", "sub": ["id" : 1 , "name": "thanh1AAAAAA"]])
+        let a2 = NewModel(["id" : 2 , "name": "thanh2AAA", "sub": ["id" : 2 , "name": "thanh2AAAAAA"]])
+        let a3 = NewModel(["id" : 3 , "name": "thanh3AAA", "sub": ["id" : 3 , "name": "thanh3AAAAAA"]])
+        let a4 = NewModel(["id" : 4 , "name": "thanh4AAA", "sub": ["id" : 4 , "name": "thanh4AAAAAA"]])
         
-        let a11 = NewModel(id: "a11", createAt: nil, name: "a11")
-        let a21 = NewModel(id: "a21", createAt: nil, name: "a21")
-        let a31 = NewModel(id: "a31", createAt: nil, name: "a31")
-        let a41 = NewModel(id: "a41", createAt: nil, name: "a41")
+        warehouse.add(a1, poolId: "1")
+        warehouse.add(a2, poolId: "1")
+        warehouse.add(a3, poolId: "1")
+        warehouse.add(a4, poolId: "1")
         
-        warehouse.add(a1, poolIdentifier: "1")
-        warehouse.add(a2, poolIdentifier: "1")
-        warehouse.add(a3, poolIdentifier: "1")
-        warehouse.add(a4, poolIdentifier: "1")
-        
-        warehouse.add(a11, poolIdentifier: "1")
-        warehouse.add(a21, poolIdentifier: "1")
-        warehouse.add(a31, poolIdentifier: "1")
-        warehouse.add(a41, poolIdentifier: "1")
-        
-        
-        
-        warehouse.add(a1, poolIdentifier: "11")
-        warehouse.add(a2, poolIdentifier: "11")
-        warehouse.add(a3, poolIdentifier: "11")
-        warehouse.add(a4, poolIdentifier: "11")
-        warehouse.add(a11, poolIdentifier: "11")
-        warehouse.add(a21, poolIdentifier: "11")
-        warehouse.add(a31, poolIdentifier: "11")
-        warehouse.add(a41, poolIdentifier: "11")
+        Queue.delay(1) { 
+            let a11 = NewModel(["id" : 11 , "name": "thanh11BBB", "sub": ["id" : 11 , "name": "thanh11BBBBB"]])
+            let a21 = NewModel(["id" : 12 , "name": "thanh12BBB", "sub": ["id" : 12 , "name": "thanh12BBBBB"]])
+            let a31 = NewModel(["id" : 13 , "name": "thanh13BBB", "sub": ["id" : 13 , "name": "thanh13BBBBB"]])
+            let a41 = NewModel(["id" : 14 , "name": "thanh14BB", "sub": ["id" : 12 , "name": "thanh14BBBBB"]])
+            
+            warehouse.add(a11, poolId: "1")
+            warehouse.add(a21, poolId: "1")
+            warehouse.add(a31, poolId: "1")
+            warehouse.add(a41, poolId: "1")
+        }
         
         print("\n\nwarehouse.store: ", warehouse.observableStore)
         
         print("\n\n\nwarehouse.rawValue: ", warehouse.rawValue)
         
-        
-        a1.name.subscribe(self) { [unowned self] (value) in
+        a1.name?.subscribe(self) { [unowned self] (value) in
             print(self, ": A1 CHHANGE:", value)
         }
         

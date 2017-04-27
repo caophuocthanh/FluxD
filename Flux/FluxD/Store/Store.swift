@@ -36,13 +36,13 @@ class Store {
     /*
      * observable pool
      */
-    func pool(_ poolIdentifier: String) -> Observable<Pool> {
+    func pool(_ poolId: String) -> Observable<Pool> {
         for observablePool in self._observableStore.value {
-            if observablePool.value.identifer == poolIdentifier {
+            if observablePool.value.identifer == poolId {
                 return observablePool
             }
         }
-        let observablePool = Observable<Pool>(Pool(poolIdentifier))
+        let observablePool = Observable<Pool>(Pool(poolId))
         self._observableStore.value.append(observablePool)
         return observablePool
     }
@@ -50,22 +50,26 @@ class Store {
     /*
      * append
      */
-    func add(_ object: Object, poolIdentifier: String) {
-        Queue.global {
-            self.update(object)
-            let observablePool = self.pool(poolIdentifier)
-            if observablePool.value.array.contains(where: { (observableObject) -> Bool in
-                return observableObject.value.id.value == object.id.value && type(of: observableObject.value) == type(of: object)
-            }) == false {
-                return observablePool.value.append(object)
+    func add(_ object: Object, poolId: String) {
+        for observablePool in self._observableStore.value {
+            for observableObject in observablePool.value.array {
+                if observableObject.value.id.value == object.id.value && type(of: observableObject.value) === type(of: object) {
+                    observableObject.value.update(object)
+                }
             }
+        }
+        let observablePool = self.pool(poolId)
+        if observablePool.value.array.contains(where: { (observableObject) -> Bool in
+            return observableObject.value.id.value == object.id.value && type(of: observableObject.value) == type(of: object)
+        }) == false {
+            return observablePool.value.append(object)
         }
     }
     
-    func append(_ objects: [Object], poolIdentifier: String) {
+    func append(_ objects: [Object], poolId: String) {
         Queue.global {
             for object in objects {
-                self.add(object, poolIdentifier: poolIdentifier)
+                self.add(object, poolId: poolId)
             }
         }
     }
@@ -74,10 +78,12 @@ class Store {
      * update
      */
     func update(_ object: Object) {
-        for observablePool in self._observableStore.value {
-            for (index, observableObject) in observablePool.value.array.enumerated() {
-                if observableObject.value.id.value == object.id.value && type(of: observableObject) === type(of: object) {
-                    return observablePool.value.array[index].value = object
+        Queue.global {
+            for observablePool in self._observableStore.value {
+                for observableObject in observablePool.value.array {
+                    if observableObject.value.id.value == object.id.value && type(of: observableObject.value) === type(of: object) {
+                        observableObject.value.update(object)
+                    }
                 }
             }
         }
@@ -96,13 +102,13 @@ class Store {
         }
     }
     
-    func fetch(_ poolIdentifier: String) -> Observable<Pool> {
+    func fetch(_ poolId: String) -> Observable<Pool> {
         for observablePool in self._observableStore.value {
-            if observablePool.value.identifer == poolIdentifier {
+            if observablePool.value.identifer == poolId {
                 return observablePool
             }
         }
-        let observablePool = Observable<Pool>(Pool(poolIdentifier))
+        let observablePool = Observable<Pool>(Pool(poolId))
         self._observableStore.value.append(observablePool)
         return observablePool
     }
@@ -110,10 +116,10 @@ class Store {
     /*
      * fetch
      */
-    func fetch(_ poolIdentifier: String,_ completion: @escaping (Observable<Pool>) -> ()) {
+    func fetch(_ poolId: String,_ completion: @escaping (Observable<Pool>) -> ()) {
         Queue.global {
             for observablePool in self._observableStore.value {
-                if observablePool.value.identifer == poolIdentifier {
+                if observablePool.value.identifer == poolId {
                     Queue.main {
                         return completion(observablePool)
                     }
