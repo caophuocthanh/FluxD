@@ -86,8 +86,6 @@ class ViewController: UIViewController {
         print("viewDidAppear A")
         
         print("\n\n----------------ViewController viewDidAppear-------------------\n")
-        
-        
 
         Queue.delay(15) {
             Queue.global {
@@ -118,9 +116,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "aa", for: indexPath)
         if let observerModel = (self.data[indexPath.row].value as? NewModel) {
-            cell.textLabel?.text = observerModel.name.value
-            observerModel.sub.value.name.subscribe(self, { (newValue) in
-                print("observerModel.name changed:", newValue)
+            cell.textLabel?.text = observerModel.sub.value?.name.value
+            observerModel.sub.value?.name.subscribe(self, { (newValue) in
+                print("observerModel.sub.value.name.value changed:", newValue ?? "nil")
                 cell.textLabel?.text = newValue
             })
         }
@@ -129,7 +127,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        (data[indexPath.row].value as? NewModel)?.name.value = "Changed: \(indexPath.row)"
+        (data[indexPath.row].value as? NewModel)?.sub.value?.name.value = "Changed: \(indexPath.row)"
     }
     
 }

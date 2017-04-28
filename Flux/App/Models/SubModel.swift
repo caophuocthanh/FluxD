@@ -10,12 +10,12 @@ import UIKit
 
 class SubModel: Object {
     
-    var name: Observable<String>!
+    var name: Observable<String?> = Observable<String?>(nil)
     
     override init(_ any: Any) {
         super.init(any)
         if let idName = JSON(any)["name"].string {
-            self.name = Observable<String>(idName)
+            self.name = Observable<String?>(idName)
         }
     }
 }

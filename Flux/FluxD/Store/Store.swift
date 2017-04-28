@@ -52,14 +52,14 @@ class Store {
      */
     func add(_ object: Object, poolId: String) {
         for observablePool in self._observableStore.value {
-            for observableObject in observablePool.value.array {
+            for observableObject in observablePool.value.objects.value {
                 if observableObject.value.id.value == object.id.value && type(of: observableObject.value) === type(of: object) {
                     observableObject.value.update(object)
                 }
             }
         }
         let observablePool = self.pool(poolId)
-        if observablePool.value.array.contains(where: { (observableObject) -> Bool in
+        if observablePool.value.objects.value.contains(where: { (observableObject) -> Bool in
             return observableObject.value.id.value == object.id.value && type(of: observableObject.value) == type(of: object)
         }) == false {
             return observablePool.value.append(object)
@@ -80,7 +80,7 @@ class Store {
     func update(_ object: Object) {
         Queue.global {
             for observablePool in self._observableStore.value {
-                for observableObject in observablePool.value.array {
+                for observableObject in observablePool.value.objects.value {
                     if observableObject.value.id.value == object.id.value && type(of: observableObject.value) === type(of: object) {
                         observableObject.value.update(object)
                     }

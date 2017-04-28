@@ -10,16 +10,16 @@ import UIKit
 
 class NewModel: Object {
     
-    var name: Observable<String>!
-    var sub: Observable<SubModel>!
+    var name: Observable<String?> = Observable<String?>(nil)
+    var sub: Observable<SubModel?> = Observable<SubModel?>(nil)
     
     override init(_ any: Any) {
         super.init(any)
         if let idName = JSON(any)["name"].string {
-            self.name = Observable<String>(idName)
+            self.name = Observable<String?>(idName)
         }
         if let sub = JSON(any)["sub"].dictionaryObject {
-            self.sub = Observable<SubModel>(SubModel(sub))
+            self.sub = Observable<SubModel?>(SubModel(sub))
         }
     }
     

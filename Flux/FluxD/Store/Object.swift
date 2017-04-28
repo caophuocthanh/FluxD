@@ -13,10 +13,9 @@ import UIKit
  */
 class Object: Class {
     
-    var id: Observable<Int>!
-    
-    var createdTime: Observable<String>!
-    var updatedTime: Observable<String>!
+    var id: Observable<Int?> = Observable<Int?>(nil)
+    var createdTime: Observable<String?> = Observable<String?>(nil)
+    var updatedTime: Observable<String?> = Observable<String?>(nil)
     
     init(_ any: Any) {
         super.init()
@@ -25,13 +24,13 @@ class Object: Class {
     
     func map(_ any: Any) {
         if let idValue = JSON(any)["id"].int {
-            self.id = Observable<Int>(idValue)
+            self.id = Observable<Int?>(idValue)
         }
         if let createdTimeValue = JSON(any)["createdTime"].string {
-            self.createdTime = Observable<String>(createdTimeValue)
+            self.createdTime = Observable<String?>(createdTimeValue)
         }
         if let updatedTimeValue = JSON(any)["updatedTime"].string {
-            self.updatedTime = Observable<String>(updatedTimeValue)
+            self.updatedTime = Observable<String?>(updatedTimeValue)
         }
     }
     
@@ -44,28 +43,7 @@ class Object: Class {
         for (_, element_old) in mirrored_object_old.children.enumerated() {
             for (_, element_new) in mirrored_object_new.children.enumerated() {
                 if element_old.label == element_new.label {
-                    if let object = element_old.value as? Object {
-                        object.update(element_new.value as! Object)
-                    } else {
-                        if let oldValue = element_old.value as? Observable<String>, let newValue = element_new.value as? Observable<String> {
-                            oldValue.value = newValue.value
-                        }
-                        if let oldValue = element_old.value as? Observable<Int>, let newValue = element_new.value as? Observable<Int> {
-                            oldValue.value = newValue.value
-                        }
-                        if let oldValue = element_old.value as? Observable<Double>, let newValue = element_new.value as? Observable<Double> {
-                            oldValue.value = newValue.value
-                        }
-                        if let oldValue = element_old.value as? Observable<Bool>, let newValue = element_new.value as? Observable<Bool> {
-                            oldValue.value = newValue.value
-                        }
-                        if let oldValue = element_old.value as? Observable<Date>, let newValue = element_new.value as? Observable<Date> {
-                            oldValue.value = newValue.value
-                        }
-                        if let oldValue = element_old.value as? Observable<Float>, let newValue = element_new.value as? Observable<Float> {
-                            oldValue.value = newValue.value
-                        }
-                    }
+                    self.updateObservable(element_old, element_new)
                 }
             }
         }
@@ -73,34 +51,36 @@ class Object: Class {
         if let parent_old = mirrored_object_old.superclassMirror, let parent_new = mirrored_object_new.superclassMirror {
             for (_, element_old) in parent_old.children.enumerated() {
                 for (_, element_new) in parent_new.children.enumerated() {
-                    if element_old.label == element_new.label {
-                        if let object = element_old.value as? Object {
-                            object.update(element_new.value as! Object)
-                        } else {
-                            if let oldValue = element_old.value as? Observable<String>, let newValue = element_new.value as? Observable<String> {
-                                oldValue.value = newValue.value
-                            }
-                            if let oldValue = element_old.value as? Observable<Int>, let newValue = element_new.value as? Observable<Int> {
-                                oldValue.value = newValue.value
-                            }
-                            if let oldValue = element_old.value as? Observable<Double>, let newValue = element_new.value as? Observable<Double> {
-                                oldValue.value = newValue.value
-                            }
-                            if let oldValue = element_old.value as? Observable<Bool>, let newValue = element_new.value as? Observable<Bool> {
-                                oldValue.value = newValue.value
-                            }
-                            if let oldValue = element_old.value as? Observable<Date>, let newValue = element_new.value as? Observable<Date> {
-                                oldValue.value = newValue.value
-                            }
-                            if let oldValue = element_old.value as? Observable<Float>, let newValue = element_new.value as? Observable<Float> {
-                                oldValue.value = newValue.value
-                            }
-                        }
-                    }
+                    self.updateObservable(element_old, element_new)
                 }
             }
         }
     }
+    
+    fileprivate func mapObservable<T: Any>(_ type: T.Type,_ oldObservable:(label: String?, value: Any),_ newObservable:(label: String?,value: Any)) -> Bool {
+        print("MAPP TYPE:", type)
+        if let oldValue = oldObservable.value as? Observable<T?>, let newValue = newObservable.value as? Observable<T?> {
+            oldValue.value = newValue.value
+            return true
+        }
+        return false
+    }
+    
+    fileprivate func updateObservable(_ oldObservable:(label: String?, value: Any),_ newObservable:(label: String?,value: Any)) {
+        if oldObservable.label == newObservable.label {
+            if self.mapObservable(String.self, oldObservable, newObservable) { return }
+            else if self.mapObservable(Int.self, oldObservable, newObservable) { return }
+            else if self.mapObservable(Double.self, oldObservable, newObservable) { return }
+            else if self.mapObservable(Bool.self, oldObservable, newObservable) { return }
+            else if self.mapObservable(Date.self, oldObservable, newObservable) { return }
+            else if self.mapObservable(Float.self, oldObservable, newObservable) { return }
+            else if self.mapObservable(Object.self, oldObservable, newObservable) {return}
+            else if self.mapObservable(SubModel.self, oldObservable, newObservable) {return}
+            else if self.mapObservable(NewModel.self, oldObservable, newObservable) {return}
+            print("Please add Object Type to this Code:", oldObservable," : ", newObservable)
+        }
+    }
+    
     
     func string() -> String {
         let data = try! JSONSerialization.data(withJSONObject: self.toJSON(), options: JSONSerialization.WritingOptions.prettyPrinted)

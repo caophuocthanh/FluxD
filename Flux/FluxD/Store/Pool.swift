@@ -18,13 +18,6 @@ class Pool {
     
     var objects: Observable<[Observable<Object>]> = Observable<[Observable<Object>]>([])
     
-    var array: [Observable<Object>] {
-        get {
-            return self.objects.value
-        }
-        set{}
-    }
-    
     /*
      * init
      */

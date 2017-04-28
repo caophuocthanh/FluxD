@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-        let a1 = NewModel(["id" : 1 , "name": "thanh1AAAA", "sub": ["id" : 1 , "name": "thanh1AAAAAA"]])
+        let a1 = NewModel(["id" : 1 , "name": "thanh1AAAA"])
         let a2 = NewModel(["id" : 2 , "name": "thanh2AAA", "sub": ["id" : 2 , "name": "thanh2AAAAAA"]])
         let a3 = NewModel(["id" : 3 , "name": "thanh3AAA", "sub": ["id" : 3 , "name": "thanh3AAAAAA"]])
         let a4 = NewModel(["id" : 4 , "name": "thanh4AAA", "sub": ["id" : 4 , "name": "thanh4AAAAAA"]])
@@ -68,8 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("\n\n\nwarehouse.rawValue: ", warehouse.rawValue)
         
-        a1.name?.subscribe(self) { [unowned self] (value) in
-            print(self, ": A1 CHHANGE:", value)
+        a1.name.subscribe(self) { [unowned self] (value) in
+            print(self, ": A1 CHHANGE:", value ?? "nil")
         }
         
     }
