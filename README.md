@@ -1,8 +1,6 @@
-# FluxD
+# FluxD - Pool Object and Object can observe, lisen change. 
 
-<img src="https://pbs.twimg.com/media/CvRUVKKVUAAW-oi.png" >
-
-### Solar System Exploration, 1950s – 1960s
+Note: This was an old project I have not been done. So, currenly it is an document for another project. Thanks for watching this repo.
 
 - [x] Store Object
 - [x] Reaction Event
