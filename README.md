@@ -2,16 +2,16 @@
 
 <img src="https://pbs.twimg.com/media/CvRUVKKVUAAW-oi.png" >
 
-1 - Store Object
+### Solar System Exploration, 1950s – 1960s
 
-2 - Reaction Event
-
-
-Next: 
-
-3 - Reaction State: Update, OnChange, Delete
-
-4 - ...
-
+- [x] Store Object
+- [x] Reaction Event
+- [ ] Reaction State: Update, OnChange, Delete
+- [ ] ...
 
 <img src="https://pbs.twimg.com/media/CvQ1NGCUIAAVXBr.jpg">
+
+## Contact
+- Email: caophuocthanh@gmail.com
+- Site: https://onebuffer.com
+- Linkedin: https://www.linkedin.com/in/caophuocthanh/
